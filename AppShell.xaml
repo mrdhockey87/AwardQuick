@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AwardQuick.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:pages="clr-namespace:AwardQuick.Pages"
+    xmlns:custom="clr-namespace:AwardQuick.CustomControl"
+    BindingContext="{x:Reference shell}"
+    x:Name="shell"
+    Shell.FlyoutBehavior="Locked"
+    FlyoutBackground="{StaticResource PrimaryText}"
+    Title="Award Quick">
+
+    <Shell.FlyoutHeader>
+        <Grid Padding="10" BackgroundColor="{StaticResource PrimaryText}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="2.5*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Column="1"
+                Grid.Row="0"
+                Grid.ColumnSpan="3"
+                Aspect="AspectFit"
+                Source="mmlogo.png"
+                HeightRequest="50"
+                WidthRequest="150"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            <StackLayout Grid.Column="0"
+                         Grid.Row="2"
+                         Grid.ColumnSpan="3"
+                         Orientation="Vertical">
+                <Label FontSize="{DynamicResource LargeFontSize}"
+                       Margin="5,0,0,10"
+                       Text="Award Quick"
+                       TextColor="{StaticResource PrimaryBackground}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+                <Border HeightRequest="3"
+                        BackgroundColor="{StaticResource PrimaryBackground}" />
+            </StackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+    <!--  see VDCA.AppShell  -->
+
+    <!-- Define the Flyout Items  -->
+    <FlyoutItem Title="Home"
+                Icon="home_icon.png">
+        <ShellContent Route="MainPage"
+                      ContentTemplate="{DataTemplate pages:MainPage}" />
+    </FlyoutItem>
+    <Shell.FlyoutContent>
+        <custom:CustomFlyoutContent ShellReference="{x:Reference shell}" />
+    </Shell.FlyoutContent>
+    <Shell.FlyoutFooter>
+        <Grid IsVisible="False" Padding="15">
+            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl"
+                                   VerticalOptions="Center" HorizontalOptions="Center" SelectionChanged="SfSegmentedControl_SelectionChanged"
+                                   SegmentWidth="80" SegmentHeight="40">
+                <sf:SfSegmentedControl.ItemsSource>
+                    <x:Array Type="{x:Type sf:SfSegmentItem}">
+                        <sf:SfSegmentItem ImageSource="light_mode_sun.png"/>
+                        <sf:SfSegmentItem ImageSource="dark_mode_moon.png"/>
+                    </x:Array>
+                </sf:SfSegmentedControl.ItemsSource>
+            </sf:SfSegmentedControl>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

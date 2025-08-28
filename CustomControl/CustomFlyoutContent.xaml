@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwardQuick.CustomControl.CustomFlyoutContent"
+             xmlns:control="clr-namespace:AwardQuick.CustomControl"
+             x:DataType="control:CustomFlyoutContent"
+             x:Name="customFlyoutContent"
+             BackgroundColor="{StaticResource PrimaryText}"
+             Title="CustomFlyoutContent">
+    <ContentPage.BindingContext>
+        <x:Reference Name="customFlyoutContent" />
+    </ContentPage.BindingContext>
+    <ScrollView Margin="0"
+                Padding="0"
+                VerticalOptions="Start">
+
+        <VerticalStackLayout VerticalOptions="Start">
+            <Grid ColumnDefinitions="Auto, *, Auto"
+                  Padding="0"
+                  ColumnSpacing="5"
+                  x:Name="zero">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource PrimaryBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource PrimaryIconLightMode}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Image Grid.Column="0"
+                       Source="navy_home_icon.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Home"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryText}" />
+                <Image Source="blank_space.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="0" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
