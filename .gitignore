@@ -12,8 +12,9 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
-/bin
-/obj
+/bin/
+/obj/
+E:\_MAUIProjects\AwardQuick\AwardQuick\bin
 /.github
 # Mono auto generated files
 mono_crash.*
