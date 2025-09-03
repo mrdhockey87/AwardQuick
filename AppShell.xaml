@@ -4,18 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
-    xmlns:pages="clr-namespace:AwardQuick.Pages"
+    xmlns:views="clr-namespace:AwardQuick.Views"
     xmlns:custom="clr-namespace:AwardQuick.CustomControl"
     BindingContext="{x:Reference shell}"
     x:Name="shell"
     Shell.FlyoutBehavior="Locked"
-    FlyoutBackground="{StaticResource PrimaryText}"
+    FlyoutBackground="{StaticResource MainMenuBackground}"
     Title="Award Quick">
 
     <Shell.FlyoutHeader>
-        <Grid Padding="10" BackgroundColor="{StaticResource PrimaryText}">
+        <Grid Margin="0,20,0,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -25,10 +25,11 @@
                 <ColumnDefinition Width="2.5*" />
             </Grid.ColumnDefinitions>
             <Image
-                Grid.Column="1"
+                Grid.Column="0"
                 Grid.Row="0"
                 Grid.ColumnSpan="3"
                 Aspect="AspectFit"
+                Margin="0,0,38,0"
                 Source="mmlogo.png"
                 HeightRequest="50"
                 WidthRequest="150"
@@ -39,8 +40,8 @@
                          Grid.ColumnSpan="3"
                          Orientation="Vertical">
                 <Label FontSize="{DynamicResource LargeFontSize}"
-                       Margin="5,0,0,10"
-                       Text="Award Quick"
+                       Margin="5,0,50,5"
+                       Text="Award Quick Menu:"
                        TextColor="{StaticResource PrimaryBackground}"
                        FontAttributes="Bold"
                        HorizontalOptions="Center"
@@ -56,11 +57,57 @@
     <FlyoutItem Title="Home"
                 Icon="home_icon.png">
         <ShellContent Route="MainPage"
-                      ContentTemplate="{DataTemplate pages:MainPage}" />
+                      ContentTemplate="{DataTemplate views:MainPage}" />
     </FlyoutItem>
-    <Shell.FlyoutContent>
-        <custom:CustomFlyoutContent ShellReference="{x:Reference shell}" />
-    </Shell.FlyoutContent>
+    <FlyoutItem Title="Statements/Citations">
+        <!-- Icon="home_icon.png">-->
+        <ShellContent Route="StatementsCitations"
+                      ContentTemplate="{DataTemplate views:StatmentCitationsView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Forms">
+        <!-- Icon="home_icon.png">-->
+        <ShellContent Route="Forms"
+                      ContentTemplate="{DataTemplate views:FormsCitationsView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Examples">
+        <!-- Icon="home_icon.png">-->
+        <ShellContent Route="Examples"
+                      ContentTemplate="{DataTemplate views:ExamplesView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Letters and Memos">
+        <ShellContent Route="LettersMemos"
+                      ContentTemplate="{DataTemplate views:LettersMemosView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Web Resources">
+        <ShellContent Route="WebResources"
+                      ContentTemplate="{DataTemplate views:WebResourcesView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="References">
+        <ShellContent Route="References"
+                      ContentTemplate="{DataTemplate views:ReferencesView}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Writting Tools">
+        <ShellContent Route="WrittingTools"
+                      ContentTemplate="{DataTemplate views:WrittingToolsView}" />
+    </FlyoutItem>
+
+    <MenuItem>
+        <Shell.MenuItemTemplate>
+            <DataTemplate>
+                <BoxView HeightRequest="1" BackgroundColor="{StaticResource 600Gray}" Margin="0,5,0,5" />
+            </DataTemplate>
+        </Shell.MenuItemTemplate>
+    </MenuItem>
+
+    <MenuItem Text="Ceck for Updates" Clicked="OUpdateClicked" />
+
+
+    <MenuItem Text="Support" Clicked="OnSupportClicked" />
+
+    <MenuItem Text="About" Clicked="OnAboutClicked" />
+
+    <MenuItem Text="Visit MentorMilitary.com" Clicked="OnAboutClicked" />
+
     <Shell.FlyoutFooter>
         <Grid IsVisible="False" Padding="15">
             <sf:SfSegmentedControl x:Name="ThemeSegmentedControl"

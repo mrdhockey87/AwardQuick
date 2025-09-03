@@ -11,9 +11,9 @@ namespace AwardQuick.Services
         /// Handle error in UI.
         /// </summary>
         /// <param name="ex">Exception.</param>
-        public void HandleError(Exception ex)
+        public async void HandleError(Exception ex)
         {
-            DisplayAlert(ex).FireAndForgetSafeAsync();
+            await DisplayAlert(ex);
         }
 
         async Task DisplayAlert(Exception ex)

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="viewModels:LicenseAgreementViewModel"
+             x:Class="AwardQuick.Pages.LicenseAgreementView"
+             x:Name="MetaPage"
+             Title="License Agreement">
+
+    <ContentPage.BindingContext>
+        <viewModels:LicenseAgreementViewModel x:Name="LicenseAgreementViewModel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="Fill"
+              BackgroundColor="{StaticResource PrimaryBackground}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Text="LICENSE AGREEMENT"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   TextDecorations="Underline"
+                   TextColor="{StaticResource AppButtonText}"
+                   BackgroundColor="{StaticResource PrimaryBackground}"
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="30"
+                    FontSize="16"
+                    Margin="0,0,0,0"
+                    Padding="5,0,10,0"
+                    Command="{Binding BackClickCommand}"
+                    Style="{StaticResource WhiteBackButtonStyle}"
+                    Text="Back" />
+
+            <WebView Grid.Row="1"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     HorizontalOptions="Fill">
+                <WebView.Source>
+                    <HtmlWebViewSource Html="{Binding LicenseHtml}" />
+                </WebView.Source>
+            </WebView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

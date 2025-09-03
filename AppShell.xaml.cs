@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Maui.Alerts;
+﻿using AwardQuick.Views;
+using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 using Font = Microsoft.Maui.Font;
 
@@ -10,10 +11,23 @@ namespace AwardQuick
         public AppShell()
         {
             InitializeComponent();
+            RegisterRoutes();
             //var currentTheme = Application.Current!.RequestedTheme;
             //ThemeSegmentedControl.SelectedIndex = currentTheme == AppTheme.Light ? 0 : 1;
         }
 
+        private void RegisterRoutes()
+        {
+            // Default views for other platforms
+            Routing.RegisterRoute("Examples", typeof(ExamplesView));
+            Routing.RegisterRoute("Forms", typeof(FormsView));
+            Routing.RegisterRoute("LettersMemos", typeof(LettersMemosView));
+            Routing.RegisterRoute("License", typeof(LicenseAgreementView));
+            Routing.RegisterRoute("References", typeof(ReferencesView));
+            Routing.RegisterRoute("StatmentCitations", typeof(StatmentCitationsView));
+            Routing.RegisterRoute("WebResources", typeof(WebResourcesView));
+            Routing.RegisterRoute("WrittingTools", typeof(WrittingToolsView));
+        }
         public async Task OnMenuItemClicked(string route)
         {
             if (isNavigating) return; // Prevent multiple clicks
@@ -28,6 +42,37 @@ namespace AwardQuick
         {
             await OnMenuItemClicked("///MainPage");
         }
+        private async void OUpdateClicked(object sender, EventArgs e)
+        {
+            string msg = "While checking for updates, the program will close automatically.";
+            string msg2 = "Click OK to close the program and check for updates.";
+            bool answer = await DisplayAlert("Update Notice", msg + Environment.NewLine + msg2, "OK", "Cancel");
+            if(answer)
+            {
+                // Close the app I still need to figure out how to run an external process to check for updates.
+                System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+            }
+        }
+
+        private async void OnSupportClicked(object sender, EventArgs e)
+        {
+            if (sender is MenuItem menuItem)
+            {
+                //Figure out how to open a URL in default browser
+            }
+        }
+
+        private async void OnAboutClicked(object sender, EventArgs e)
+        {
+            //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
+            //await OnMenuItemClicked("About");
+        }
+
+        private async void OnVisitMentorMilClicked(object sender, EventArgs e)
+        {
+            //Figure out how to open a URL in default browser on MentorMilitary.com web  site mdail 9-3-2025
+        }
+
         public static async Task DisplaySnackbarAsync(string message)
         {
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();

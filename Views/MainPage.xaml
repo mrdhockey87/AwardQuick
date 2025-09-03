@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
+             xmlns:overlay="clr-namespace:AwardQuick.Overlays"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AwardQuick.Views.MainPage"
+             BackgroundColor="{StaticResource PrimaryBackground}"
+             x:Name="OverviewPage"
+             Title="Award Quick">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"
+                   Grid.Row="0"
+                   HeightRequest="20"
+                   Source="blank_space.png"
+                   VerticalOptions="Start"
+                   Aspect="AspectFit" />
+            <Image Grid.Column="0"
+                   Grid.Row="1"
+                   HeightRequest="250"
+                   Source="title.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit" />
+            <Image Grid.Column="0"
+                   Grid.Row="2"
+                   HeightRequest="250"
+                   Source="homeimage.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Aspect="AspectFit" />
+            <Label Grid.Column="0"
+                   Grid.Row="3"
+                   Text="Use the Menu to the left to get started..."
+                   TextColor="{StaticResource HomePageText}"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="End"
+                   Margin="0,0,0,10"
+                   FontSize="30" />
+            <Grid Grid.Column="0"
+                  Grid.Row="4"
+                  VerticalOptions="End">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       Grid.Row="0"
+                       WidthRequest="{Binding Source={x:Reference VersionLabel}, Path=Width}"
+                       HorizontalOptions="Start"
+                       Aspect="AspectFit" />
+                <Button Grid.Column="1"
+                        Grid.Row="0"
+                        Text="View License Agreement"
+                        HorizontalOptions="Fill"
+                        FontSize="10"
+                        Padding="0"
+                        Margin="0,0,20,0"
+                        Style="{StaticResource VersionButtonStyle}"
+                        Clicked="OnLicenseAgreementClicked">
+                </Button>
+                <Label Grid.Column="2"
+                       Grid.Row="0"
+                       x:Name="VersionLabel"
+                       Text="Version"
+                       Margin="0,10,20,10"
+                       HorizontalOptions="Center"
+                       TextColor="{StaticResource Gray500}"
+                       BackgroundColor="{StaticResource TransparentColor}"
+                       FontSize="10" />
+            </Grid>
+            <overlay:ProgressBarOverlay x:Name="progressBarOverlay"
+                                        Grid.Row="1"
+                                        Grid.Column="0" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
