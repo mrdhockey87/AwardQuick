@@ -42,7 +42,7 @@ namespace AwardQuick
         {
             await OnMenuItemClicked("///MainPage");
         }
-        private async void OUpdateClicked(object sender, EventArgs e)
+        private async void OnUpdateClicked(object sender, EventArgs e)
         {
             string msg = "While checking for updates, the program will close automatically.";
             string msg2 = "Click OK to close the program and check for updates.";
@@ -66,11 +66,23 @@ namespace AwardQuick
         {
             //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
             //await OnMenuItemClicked("About");
+            await DisplayAlert("⚠️" + " Error", "Error opening default browser!", "OK");
         }
 
         private async void OnVisitMentorMilClicked(object sender, EventArgs e)
         {
             //Figure out how to open a URL in default browser on MentorMilitary.com web  site mdail 9-3-2025
+            try
+            {
+                Uri uri = new("https://www.MentorMilitary.com"); // Replace with your desired URL
+                await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions, for example, if no browser is installed
+                await DisplayAlert("⚠️" +  " Error", "Error opening default browser!", "OK");
+                Console.WriteLine($"Error opening browser: {ex.Message}");
+            }
         }
 
         public static async Task DisplaySnackbarAsync(string message)

@@ -27,10 +27,14 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0003.0010 Spent the day trying to get a divider line accross the menu between the 2,so many options but none worked.
+ *                the only one that can close was using the _ text however that leave a problem that it will not size for 
+ *                different monitor. I an going to have to convert to a custom menu as I started to do at the begining. 
+ *                So now I will have to put the control back and redo the menu there. mdail  9-4-25
  *  v 2.0003.0009 Added all the view & view models, layed the Flyout menu out and register all routes in AppShell.xaml.cs
  *          Started AppStyles for using static resource styles, commited the delete of all the stuff that got made when the 
  *          app got made by vs, and all files I just made. renamed pages to views and pagemodels the viewmodels and updated code 
- *          to make the new directory namespaces work. fixed the files missing in the licenses html, probably did soe other things too mdail  9-4-25
+ *          to make the new directory namespaces work. fixed the files missing in the licenses html, probably did some other things too mdail  9-4-25
  *  v 2.2.8 Got app to run in windows, the Text color in the button for the License, Was missing Style, when I put Style in says can't find style
  *          asle says can't find path E:\\_MAUIProjects\\AwardQuick\\AwardQuick\\bin\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\AppLicenses\\License.html'." mdail  8-29-25
  *  v 2.2.7 finally got it to build without errors. Need to test on all platforms.

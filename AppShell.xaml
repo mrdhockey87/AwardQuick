@@ -12,6 +12,14 @@
     FlyoutBackground="{StaticResource MainMenuBackground}"
     Title="Award Quick">
 
+    <!--The Divider requires the style and template to get it to wrk correctly-->
+    <Shell.Resources>
+        <Style x:Key="DividerStyle" TargetType="MenuItem">
+            <Setter Property="IsEnabled" Value="False" />
+            <Setter Property="Text" Value="" />
+        </Style>
+    </Shell.Resources>
+
     <Shell.FlyoutHeader>
         <Grid Margin="0,20,0,0">
             <Grid.RowDefinitions>
@@ -67,7 +75,7 @@
     <FlyoutItem Title="Forms">
         <!-- Icon="home_icon.png">-->
         <ShellContent Route="Forms"
-                      ContentTemplate="{DataTemplate views:FormsCitationsView}" />
+                      ContentTemplate="{DataTemplate views:FormsView}" />
     </FlyoutItem>
     <FlyoutItem Title="Examples">
         <!-- Icon="home_icon.png">-->
@@ -91,15 +99,11 @@
                       ContentTemplate="{DataTemplate views:WrittingToolsView}" />
     </FlyoutItem>
 
-    <MenuItem>
-        <Shell.MenuItemTemplate>
-            <DataTemplate>
-                <BoxView HeightRequest="1" BackgroundColor="{StaticResource 600Gray}" Margin="0,5,0,5" />
-            </DataTemplate>
-        </Shell.MenuItemTemplate>
-    </MenuItem>
+    <!-- Divider -->
+    <MenuItem Text="━━━━━━━━━━━━━━━━━━━━━━━━━━"
+              Style="{StaticResource DividerStyle}" />
 
-    <MenuItem Text="Ceck for Updates" Clicked="OUpdateClicked" />
+    <MenuItem Text="Ceck for Updates" Clicked="OnUpdateClicked" />
 
 
     <MenuItem Text="Support" Clicked="OnSupportClicked" />
