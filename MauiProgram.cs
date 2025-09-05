@@ -40,12 +40,12 @@ namespace AwardQuick
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ReferencesViewModel>();
             builder.Services.AddSingleton<ReferencesView>();
-            builder.Services.AddSingleton<StatmentCitationsViewModel>();
-            builder.Services.AddSingleton<StatmentCitationsView>();
+            builder.Services.AddSingleton<StatementCitationsViewModel>();
+            builder.Services.AddSingleton<StatementCitationsView>();
             builder.Services.AddSingleton<WebResourcesViewModel>();
             builder.Services.AddSingleton<WebResourcesView>();
-            builder.Services.AddSingleton<WrittingToolsViewModel>();
-            builder.Services.AddSingleton<WrittingToolsView>();
+            builder.Services.AddSingleton<WritingToolsViewModel>();
+            builder.Services.AddSingleton<WritingToolsView>();
             return builder.Build();
         }
     }

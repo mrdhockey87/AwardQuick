@@ -1,42 +1,55 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AwardQuick.CustomControl.CustomFlyoutContent"
              xmlns:control="clr-namespace:AwardQuick.CustomControl"
              x:DataType="control:CustomFlyoutContent"
              x:Name="customFlyoutContent"
-             BackgroundColor="{StaticResource PrimaryText}"
-             Title="CustomFlyoutContent">
-    <ContentPage.BindingContext>
-        <x:Reference Name="customFlyoutContent" />
-    </ContentPage.BindingContext>
-    <ScrollView Margin="0"
-                Padding="0"
-                VerticalOptions="Start">
-
-        <VerticalStackLayout VerticalOptions="Start">
-            <Grid ColumnDefinitions="Auto, *, Auto"
-                  Padding="0"
-                  ColumnSpacing="5"
-                  x:Name="zero">
-                <VisualStateManager.VisualStateGroups>
+             BackgroundColor="{StaticResource MainMenuBackground}"
+             x:Class="AwardQuick.CustomControl.CustomFlyoutContent">
+    <ContentView.Resources>
+        <Style x:Key="MenuItemGridStyle" TargetType="Grid">
+            <Setter Property="ColumnDefinitions" Value="Auto, *, Auto" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="ColumnSpacing" Value="5" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor"
-                                        Value="{StaticResource PrimaryBackground}" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource MainMenuBackground}" />
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Pressed">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor"
-                                        Value="{StaticResource PrimaryIconLightMode}" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource Gray600}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource Gray600}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource Gray500}" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
-                </VisualStateManager.VisualStateGroups>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentView.Resources>
+
+    <ScrollView Margin="0"
+                Padding="0"
+                VerticalOptions="Start">
+
+        <VerticalStackLayout Margin="10,0,0,0"
+                             VerticalOptions="Start">
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="home" >
                 <Image Grid.Column="0"
-                       Source="navy_home_icon.png"
+                       Source="home_icon.png"
                        Aspect="AspectFill"
                        HeightRequest="{DynamicResource MenuHeightRequest}"
                        WidthRequest="{DynamicResource MenuHeightRequest}" />
@@ -45,7 +58,7 @@
                        VerticalOptions="Center"
                        VerticalTextAlignment="Center"
                        FontSize="{DynamicResource FlyoutMenuFontSize}"
-                       TextColor="{StaticResource PrimaryText}" />
+                       TextColor="{StaticResource PrimaryBackground}" />
                 <Image Source="blank_space.png"
                        Grid.Column="2"
                        VerticalOptions="Center"
@@ -54,10 +67,321 @@
                        HeightRequest="{DynamicResource MenuHeightRequest}" />
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
-                                          CommandParameter="0" />
+                                          CommandParameter="home" />
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="statement">
+                <Image Grid.Column="0"
+                       Source="statement.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Statements/Citations"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="statement" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="forms">
+                <Image Grid.Column="0"
+                       Source="forms_icon.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Forms"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="forms" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="examples">
+                <Image Grid.Column="0"
+                       Source="sample.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Examples"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="examples" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="letters">
+                <Image Grid.Column="0"
+                       Source="letter_mail.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Letters and Memos"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="letters" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="webresources">
+                <Image Grid.Column="0"
+                       Source="webresources.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Web Resources"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="webresources" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="references">
+                <Image Grid.Column="0"
+                       Source="references.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="References"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="references" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="writing">
+                <Image Grid.Column="0"
+                       Source="writing.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Writing Tools"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="writing" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid x:Name="line"
+                  BackgroundColor="{StaticResource MainMenuBackground}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView HeightRequest="1"
+                         Color="{StaticResource PrimaryBackground}"/>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="updates">
+                <Image Grid.Column="0"
+                       Source="update.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Ceck for Updates"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="updates" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="support">
+                <Image Grid.Column="0"
+                       Source="support.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Support"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="support" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="about">
+                <Image Grid.Column="0"
+                       Source="about.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="About"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="about" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="licenses">
+                <Image Grid.Column="0"
+                       Source="thirdparty.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="3rd Party Licenses"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="licenses" />
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <Grid Style="{StaticResource MenuItemGridStyle}"
+                  x:Name="mentormilitary">
+                <Image Grid.Column="0"
+                       Source="gowebsite.png"
+                       Aspect="AspectFill"
+                       HeightRequest="{DynamicResource MenuHeightRequest}"
+                       WidthRequest="{DynamicResource MenuHeightRequest}" />
+                <Label Grid.Column="1"
+                       Text="Visit MentorMilitary.com"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       FontSize="{DynamicResource FlyoutMenuFontSize}"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="chevron_right.png"
+                       Grid.Column="2"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="{DynamicResource MenuHeightRequest}"
+                       HeightRequest="{DynamicResource MenuHeightRequest}" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapGestureRecognizerCommand}"
+                                          CommandParameter="mentormilitary" />
                 </Grid.GestureRecognizers>
             </Grid>
 
         </VerticalStackLayout>
     </ScrollView>
-</ContentPage>
+</ContentView>

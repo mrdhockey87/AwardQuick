@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AwardQuick.ViewModels
 {
-    public partial class WrittingToolsViewModel : ObservableObject
+    public partial class WritingToolsViewModel : ObservableObject
     {
-        public WrittingToolsViewModel()
+        public WritingToolsViewModel()
         {
         }
     }

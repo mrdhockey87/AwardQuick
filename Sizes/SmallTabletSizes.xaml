@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="AwardQuick.Sizes.SmallTabletSizes">
+
+    <OnPlatform x:Key="BorderSize"
+                x:TypeArguments="x:Double">
+        <On Platform="iOS">3</On>
+        <On Platform="MacCatalyst">3</On>
+        <On Platform="Android">3</On>
+        <On Platform="WinUI">3</On>
+    </OnPlatform>
+
+    <OnPlatform x:Key="FlashBorderSize"
+                x:TypeArguments="x:Double">
+        <On Platform="iOS">3</On>
+        <On Platform="MacCatalyst">3</On>
+        <On Platform="Android">3</On>
+        <On Platform="WinUI">3</On>
+    </OnPlatform>
+
+    <Thickness x:Key="MarginTop">
+        <Thickness.Top>
+            <OnPlatform x:TypeArguments="x:Double">
+                <On Platform="iOS">20</On>
+                <On Platform="Android">0</On>
+                <On Platform="WinUI">0</On>
+                <On Platform="MacCatalyst">20</On>
+            </OnPlatform>
+        </Thickness.Top>
+        <Thickness.Left>0</Thickness.Left>
+        <Thickness.Right>0</Thickness.Right>
+        <Thickness.Bottom>0</Thickness.Bottom>
+    </Thickness>
+
+    <Thickness x:Key="ListLeftMargin">
+        <Thickness.Left>5</Thickness.Left>
+        <Thickness.Top>0</Thickness.Top>
+        <Thickness.Right>0</Thickness.Right>
+        <Thickness.Bottom>0</Thickness.Bottom>
+    </Thickness>
+
+    <x:Double x:Key="LogoHeightRequestLandscape">60</x:Double>
+
+    <x:Double x:Key="LogoWidthRequestLandscape">200</x:Double>
+
+    <x:Double x:Key="LogoHeightRequestPortrait">200</x:Double>
+
+    <x:Double x:Key="LogoWidthRequestPortrait">400</x:Double>
+
+    <x:Double x:Key="InfoMinWidthRequest">125</x:Double>
+
+    <x:Double x:Key="InfoMaxWidthRequest">300</x:Double>
+
+    <x:Double x:Key="MenuHeightRequest">20</x:Double>
+
+    <x:Double x:Key="MainButtonHeightRequest">50</x:Double>
+
+    <x:Double x:Key="BaseHeightRequest">30</x:Double>
+
+    <x:Double x:Key="MediumHeightRequest">40</x:Double>
+
+    <x:Double x:Key="ChevronHeightRequest">40</x:Double>
+
+    <x:Double x:Key="LargeHeightRequest">80</x:Double>
+
+    <x:Double x:Key="WideWidthRequest">170</x:Double>
+
+    <x:Double x:Key="ExtraWideWidthRequest">180</x:Double>
+
+    <x:Double x:Key="SuperSmallFontSize">10</x:Double>
+
+    <x:Double x:Key="ExtraSmallFontSize">12</x:Double>
+
+    <x:Double x:Key="LandscapeButtonFontSize">12</x:Double>
+
+    <x:Double x:Key="SmallFontSize">14</x:Double>
+
+    <x:Double x:Key="BaseFontSize">16</x:Double>
+
+    <x:Double x:Key="LetterBaseFontSize">28</x:Double>
+
+    <x:Double x:Key="FlyoutMenuFontSize">16</x:Double>
+
+    <x:Double x:Key="MediumFontSize">18</x:Double>
+
+    <x:Double x:Key="MenuFontSize">20</x:Double>
+
+    <x:Double x:Key="LargeFontSize">22</x:Double>
+
+    <x:Double x:Key="LargeLetterFontSize">30</x:Double>
+
+    <x:Double x:Key="VeryLargeFontSize">50</x:Double>
+
+    <x:Double x:Key="ExtraLargeFontSize">76</x:Double>
+
+</ResourceDictionary>

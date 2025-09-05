@@ -30,7 +30,7 @@
 		<ApplicationId>com.companyname.awardquick</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>2.0003.0010</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>2.0004.0011</ApplicationDisplayVersion>
 		<ApplicationVersion>2</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
@@ -77,6 +77,9 @@
 	  <Compile Update="Views\LicenseAgreementViewViews.xaml.cs">
 	    <DependentUpon>LicenseAgreementViewLicenseAgreementViews.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\StatementCitationsView.xaml.cs">
+	    <DependentUpon>StatementCitationsView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -84,6 +87,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Overlays\ProgressBarOverlay.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Sizes\AppSizes.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Sizes\SmallTabletSizes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ExamplesView.xaml">
@@ -98,7 +107,7 @@
 	  <MauiXaml Update="Views\ReferencesView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\StatmentCitationsView.xaml">
+	  <MauiXaml Update="Views\StatementCitationsView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\WebResourcesView.xaml">

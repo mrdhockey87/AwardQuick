@@ -12,8 +12,9 @@ namespace AwardQuick
         {
             InitializeComponent();
             RegisterRoutes();
-            //var currentTheme = Application.Current!.RequestedTheme;
-            //ThemeSegmentedControl.SelectedIndex = currentTheme == AppTheme.Light ? 0 : 1;
+            BindingContext = this;
+            this.Navigated += OnNavigated;
+            this.Loaded += OnLoaded;
         }
 
         private void RegisterRoutes()
@@ -24,15 +25,14 @@ namespace AwardQuick
             Routing.RegisterRoute("LettersMemos", typeof(LettersMemosView));
             Routing.RegisterRoute("License", typeof(LicenseAgreementView));
             Routing.RegisterRoute("References", typeof(ReferencesView));
-            Routing.RegisterRoute("StatmentCitations", typeof(StatmentCitationsView));
+            Routing.RegisterRoute("StatementCitations", typeof(StatementCitationsView));
             Routing.RegisterRoute("WebResources", typeof(WebResourcesView));
-            Routing.RegisterRoute("WrittingTools", typeof(WrittingToolsView));
+            Routing.RegisterRoute("WritingTools", typeof(WritingToolsView));
         }
         public async Task OnMenuItemClicked(string route)
         {
             if (isNavigating) return; // Prevent multiple clicks
             isNavigating = true;
-            Shell.Current.FlyoutIsPresented = false;
             await ProgressService.Instance.ShowProgressAsync();
             await Shell.Current.GoToAsync(route);
             ProgressService.Instance.HideProgress();
@@ -42,34 +42,79 @@ namespace AwardQuick
         {
             await OnMenuItemClicked("///MainPage");
         }
-        private async void OnUpdateClicked(object sender, EventArgs e)
+        public async Task OnUpdateClicked(string route)
         {
             string msg = "While checking for updates, the program will close automatically.";
             string msg2 = "Click OK to close the program and check for updates.";
             bool answer = await DisplayAlert("Update Notice", msg + Environment.NewLine + msg2, "OK", "Cancel");
-            if(answer)
+            if (answer)
             {
                 // Close the app I still need to figure out how to run an external process to check for updates.
                 System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+                try
+                {
+                    //Need to figure out how to run an external process to check for updates.
+                    //and probably send the user to the proper place to download the updated app
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions, for example, if no browser is installed
+                    await DisplayAlert("⚠️" + " Error", "Error running update application!", "OK");
+                    ProgressService.Instance.HideProgress();
+                    Console.WriteLine($"Error opening browser: {ex.Message}");
+                }
             }
         }
-
-        private async void OnSupportClicked(object sender, EventArgs e)
+        public async Task OnSupportClicked(string route)
         {
-            if (sender is MenuItem menuItem)
+            try
             {
-                //Figure out how to open a URL in default browser
+                //Send to support page if there is a current one or make an overlay that displaies the
+                ////phone number at the office for support mdail 9-5-2025
+                await OnMenuItemClicked("///" + route);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions, for example, if no browser is installed
+                await DisplayAlert("⚠️" + " Error", "Error opening support page!", "OK");
+                ProgressService.Instance.HideProgress();
+                Console.WriteLine($"Error Support browser: {ex.Message}");
             }
         }
 
-        private async void OnAboutClicked(object sender, EventArgs e)
+        public async Task OnAboutClicked(string route)
         {
-            //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
-            //await OnMenuItemClicked("About");
-            await DisplayAlert("⚠️" + " Error", "Error opening default browser!", "OK");
+            try
+            {
+                //TODO: make an about overlay view mdail 9-5-2025
+                //await OnMenuItemClicked("///" + route);
+            }
+            catch (Exception ex)
+            {
+                //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
+                //await OnMenuItemClicked("///About");
+                await DisplayAlert("⚠️" + " Error", "Error opening about page!", "OK");
+                ProgressService.Instance.HideProgress();
+                Console.WriteLine($"Error opening About: {ex.Message}");
+            }
+        }
+        public async Task OnLicensesClicked(string route)
+        {
+            try
+            {
+                //go to the 3rd  party licenses page mdail 9-5-2025
+            }
+            catch (Exception ex)
+            {
+                //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
+                //await OnMenuItemClicked("///About");
+                await DisplayAlert("⚠️" + " Error", "Error opening about page!", "OK");
+                ProgressService.Instance.HideProgress();
+                Console.WriteLine($"Error opening About: {ex.Message}");
+            }
         }
 
-        private async void OnVisitMentorMilClicked(object sender, EventArgs e)
+        public async Task OnVisitMentorMilClicked(string route)
         {
             //Figure out how to open a URL in default browser on MentorMilitary.com web  site mdail 9-3-2025
             try
@@ -80,7 +125,8 @@ namespace AwardQuick
             catch (Exception ex)
             {
                 // Handle exceptions, for example, if no browser is installed
-                await DisplayAlert("⚠️" +  " Error", "Error opening default browser!", "OK");
+                await DisplayAlert("⚠️" + " Error", "Error opening default browser!", "OK");
+                ProgressService.Instance.HideProgress();
                 Console.WriteLine($"Error opening browser: {ex.Message}");
             }
         }
@@ -120,5 +166,24 @@ namespace AwardQuick
         {
             Application.Current!.UserAppTheme = e.NewIndex == 0 ? AppTheme.Light : AppTheme.Dark;
         }
+
+        private void OnNavigated(object sender, ShellNavigatedEventArgs e)
+        {
+
+        }
+        private async void OnLoaded(object sender, EventArgs e)
+        {
+            if (DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
+            {
+                // Multiple refresh attempts with different delays
+                /*   await Task.Delay(50);
+                   RefreshMenuBar();
+                   await Task.Delay(150);
+                   RefreshMenuBar();
+                   await Task.Delay(300);
+                   RefreshMenuBar();*/
+            }
+        }
+
     }
 }

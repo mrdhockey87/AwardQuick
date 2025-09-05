@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
              xmlns:overlay="clr-namespace:AwardQuick.Overlays"
-             x:Class="AwardQuick.Views.StatmentCitationsView"
-             Title="Statment/Citations">
+             x:Class="AwardQuick.Views.StatementCitationsView"
+             Title="Statement/Citations">
     <ContentPage.BindingContext>
-        <viewModels:StatmentCitationsViewModel x:Name="StatmentCitationsViewModel" />
+        <viewModels:StatementCitationsViewModel x:Name="StatementCitationsViewModel" />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -23,5 +23,6 @@
                                         Grid.Row="1"
                                         Grid.Column="0" />
         </Grid>
-    </ContentPage.Content>
+    </ContentPage.Content>    
 </ContentPage>
+    

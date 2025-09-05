@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AwardQuick.ViewModels
 {
-    public partial class StatmentCitationsViewModel : ObservableObject
+    public partial class StatementCitationsViewModel : ObservableObject
     {
-        public StatmentCitationsViewModel()
+        public StatementCitationsViewModel()
         {
         }
     }

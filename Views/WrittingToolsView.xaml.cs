@@ -1,8 +1,8 @@
 namespace AwardQuick.Views;
 
-public partial class WrittingToolsView : ContentPage
+public partial class WritingToolsView : ContentPage
 {
-	public WrittingToolsView()
+	public WritingToolsView()
 	{
 		InitializeComponent();
 	}

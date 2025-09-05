@@ -27,6 +27,9 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0004.0011 Added the sizes resource directory. Got the flyout menu to work with the custom control. Added images for the menu.
+ *                got the line to work on the menu. Some of the methods to display things from the menu are not done yet. Fix some 
+ *                missspelled views mdail  9-6-25
  *  v 2.0003.0010 Spent the day trying to get a divider line accross the menu between the 2,so many options but none worked.
  *                the only one that can close was using the _ text however that leave a problem that it will not size for 
  *                different monitor. I an going to have to convert to a custom menu as I started to do at the begining. 

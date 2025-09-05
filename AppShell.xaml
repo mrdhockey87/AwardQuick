@@ -12,14 +12,6 @@
     FlyoutBackground="{StaticResource MainMenuBackground}"
     Title="Award Quick">
 
-    <!--The Divider requires the style and template to get it to wrk correctly-->
-    <Shell.Resources>
-        <Style x:Key="DividerStyle" TargetType="MenuItem">
-            <Setter Property="IsEnabled" Value="False" />
-            <Setter Property="Text" Value="" />
-        </Style>
-    </Shell.Resources>
-
     <Shell.FlyoutHeader>
         <Grid Margin="0,20,0,0">
             <Grid.RowDefinitions>
@@ -47,7 +39,7 @@
                          Grid.Row="2"
                          Grid.ColumnSpan="3"
                          Orientation="Vertical">
-                <Label FontSize="{DynamicResource LargeFontSize}"
+                <Label FontSize="{DynamicResource MediumFontSize}"
                        Margin="5,0,50,5"
                        Text="Award Quick Menu:"
                        TextColor="{StaticResource PrimaryBackground}"
@@ -59,58 +51,18 @@
             </StackLayout>
         </Grid>
     </Shell.FlyoutHeader>
-    <!--  see VDCA.AppShell  -->
 
-    <!-- Define the Flyout Items  -->
+
+    <!-- Define the Flyout Items
     <FlyoutItem Title="Home"
-                Icon="home_icon.png">
-        <ShellContent Route="MainPage"
-                      ContentTemplate="{DataTemplate views:MainPage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Statements/Citations">
-        <!-- Icon="home_icon.png">-->
-        <ShellContent Route="StatementsCitations"
-                      ContentTemplate="{DataTemplate views:StatmentCitationsView}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Forms">
-        <!-- Icon="home_icon.png">-->
-        <ShellContent Route="Forms"
-                      ContentTemplate="{DataTemplate views:FormsView}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Examples">
-        <!-- Icon="home_icon.png">-->
-        <ShellContent Route="Examples"
-                      ContentTemplate="{DataTemplate views:ExamplesView}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Letters and Memos">
-        <ShellContent Route="LettersMemos"
-                      ContentTemplate="{DataTemplate views:LettersMemosView}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Web Resources">
-        <ShellContent Route="WebResources"
-                      ContentTemplate="{DataTemplate views:WebResourcesView}" />
-    </FlyoutItem>
-    <FlyoutItem Title="References">
-        <ShellContent Route="References"
-                      ContentTemplate="{DataTemplate views:ReferencesView}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Writting Tools">
-        <ShellContent Route="WrittingTools"
-                      ContentTemplate="{DataTemplate views:WrittingToolsView}" />
-    </FlyoutItem>
+    Icon="home_icon.png">-->
+    <ShellContent Route="MainPage"
+                  ContentTemplate="{DataTemplate views:MainPage}" />
+    <!-- </FlyoutItem> -->
 
-    <!-- Divider -->
-    <MenuItem Text="━━━━━━━━━━━━━━━━━━━━━━━━━━"
-              Style="{StaticResource DividerStyle}" />
-
-    <MenuItem Text="Ceck for Updates" Clicked="OnUpdateClicked" />
-
-
-    <MenuItem Text="Support" Clicked="OnSupportClicked" />
-
-    <MenuItem Text="About" Clicked="OnAboutClicked" />
-
-    <MenuItem Text="Visit MentorMilitary.com" Clicked="OnAboutClicked" />
+    <Shell.FlyoutContent>
+        <custom:CustomFlyoutContent ShellReference="{x:Reference shell}" />
+    </Shell.FlyoutContent>
 
     <Shell.FlyoutFooter>
         <Grid IsVisible="False" Padding="15">
@@ -127,4 +79,60 @@
         </Grid>
     </Shell.FlyoutFooter>
 
+
+    <!-- Define the ItemTemplate for Flyout Items -->
+    <Shell.ItemTemplate>
+        <DataTemplate x:DataType="FlyoutItem">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource MainMenuBackground}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource Gray600}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource Gray600}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource Gray500}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Label Text="{Binding Title}"
+                       Grid.Column="1"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Fill"
+                       TextColor="{StaticResource PrimaryBackground}" />
+                <Image Source="{Binding Icon}"
+                       Grid.Column="0"
+                       VerticalOptions="Center"
+                       Aspect="AspectFill" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
 </Shell>
+
+<!--  FontSize="{DynamicResource FlyoutMenuFontSize}" -->
+<!--
+WidthRequest="{DynamicResource MenuHeightRequest}"
+HeightRequest="{DynamicResource MenuHeightRequest}" /> -->

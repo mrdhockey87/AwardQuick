@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwardQuick.Sizes.AppSizes">
+
+
+
+    <OnPlatform x:Key="BorderSize"
+                x:TypeArguments="x:Double">
+        <On Platform="iOS">3</On>
+        <On Platform="MacCatalyst">3</On>
+        <On Platform="Android">3</On>
+        <On Platform="WinUI">3</On>
+    </OnPlatform>
+
+    <OnPlatform x:Key="FlashBorderSize"
+                x:TypeArguments="x:Double">
+        <On Platform="iOS">3</On>
+        <On Platform="MacCatalyst">3</On>
+        <On Platform="Android">3</On>
+        <On Platform="WinUI">3</On>
+    </OnPlatform>
+
+    <Thickness x:Key="MarginTop">
+        <Thickness.Top>
+            <OnPlatform x:TypeArguments="x:Double">
+                <On Platform="iOS">20</On>
+                <On Platform="Android">0</On>
+                <On Platform="WinUI">0</On>
+                <On Platform="MacCatalyst">20</On>
+            </OnPlatform>
+        </Thickness.Top>
+        <Thickness.Left>0</Thickness.Left>
+        <Thickness.Right>0</Thickness.Right>
+        <Thickness.Bottom>0</Thickness.Bottom>
+    </Thickness>
+
+    <Thickness x:Key="ListLeftMargin">
+        <Thickness.Left>
+            <OnIdiom x:TypeArguments="x:Double">
+                <OnIdiom.Phone>5</OnIdiom.Phone>
+                <OnIdiom.Tablet>15</OnIdiom.Tablet>
+                <OnIdiom.Desktop>5</OnIdiom.Desktop>
+            </OnIdiom>
+        </Thickness.Left>
+        <Thickness.Top>0</Thickness.Top>
+        <Thickness.Right>0</Thickness.Right>
+        <Thickness.Bottom>0</Thickness.Bottom>
+    </Thickness>
+
+    <OnIdiom x:Key="LogoHeightRequestLandscape"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>60</OnIdiom.Phone>
+        <OnIdiom.Tablet>250</OnIdiom.Tablet>
+        <OnIdiom.Desktop>250</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LogoWidthRequestLandscape"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>200</OnIdiom.Phone>
+        <OnIdiom.Tablet>450</OnIdiom.Tablet>
+        <OnIdiom.Desktop>450</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LogoHeightRequestPortrait"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>200</OnIdiom.Phone>
+        <OnIdiom.Tablet>350</OnIdiom.Tablet>
+        <OnIdiom.Desktop>250</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LogoWidthRequestPortrait"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>400</OnIdiom.Phone>
+        <OnIdiom.Tablet>750</OnIdiom.Tablet>
+        <OnIdiom.Desktop>500</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="InfoMinWidthRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>125</OnIdiom.Phone>
+        <OnIdiom.Tablet>225</OnIdiom.Tablet>
+        <OnIdiom.Desktop>250</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="InfoMaxWidthRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>300</OnIdiom.Phone>
+        <OnIdiom.Tablet>500</OnIdiom.Tablet>
+        <OnIdiom.Desktop>800</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="MenuHeightRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>20</OnIdiom.Phone>
+        <OnIdiom.Tablet>24</OnIdiom.Tablet>
+        <OnIdiom.Desktop>24</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="MainButtonHeightRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>50</OnIdiom.Phone>
+        <OnIdiom.Tablet>90</OnIdiom.Tablet>
+        <OnIdiom.Desktop>60</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="BaseHeightRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>30</OnIdiom.Phone>
+        <OnIdiom.Tablet>40</OnIdiom.Tablet>
+        <OnIdiom.Desktop>40</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="MediumHeightRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>40</OnIdiom.Phone>
+        <OnIdiom.Tablet>50</OnIdiom.Tablet>
+        <OnIdiom.Desktop>50</OnIdiom.Desktop>
+    </OnIdiom>
+    <OnIdiom x:Key="ChevronHeightRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>40</OnIdiom.Phone>
+        <OnIdiom.Tablet>70</OnIdiom.Tablet>
+        <OnIdiom.Desktop>70</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LargeHeightRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>80</OnIdiom.Phone>
+        <OnIdiom.Tablet>110</OnIdiom.Tablet>
+        <OnIdiom.Desktop>110</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="WideWidthRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>170</OnIdiom.Phone>
+        <OnIdiom.Tablet>200</OnIdiom.Tablet>
+        <OnIdiom.Desktop>210</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="ExtraWideWidthRequest"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>180</OnIdiom.Phone>
+        <OnIdiom.Tablet>220</OnIdiom.Tablet>
+        <OnIdiom.Desktop>230</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="SuperSmallFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>10</OnIdiom.Phone>
+        <OnIdiom.Tablet>16</OnIdiom.Tablet>
+        <OnIdiom.Desktop>20</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="ExtraSmallFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>12</OnIdiom.Phone>
+        <OnIdiom.Tablet>22</OnIdiom.Tablet>
+        <OnIdiom.Desktop>22</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LandscapeButtonFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>12</OnIdiom.Phone>
+        <OnIdiom.Tablet>30</OnIdiom.Tablet>
+        <OnIdiom.Desktop>30</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="SmallFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>14</OnIdiom.Phone>
+        <OnIdiom.Tablet>24</OnIdiom.Tablet>
+        <OnIdiom.Desktop>24</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="BaseFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>16</OnIdiom.Phone>
+        <OnIdiom.Tablet>24</OnIdiom.Tablet>
+        <OnIdiom.Desktop>24</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LetterBaseFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>28</OnIdiom.Phone>
+        <OnIdiom.Tablet>36</OnIdiom.Tablet>
+        <OnIdiom.Desktop>36</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="FlyoutMenuFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>16</OnIdiom.Phone>
+        <OnIdiom.Tablet>20</OnIdiom.Tablet>
+        <OnIdiom.Desktop>20</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="MediumFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>18</OnIdiom.Phone>
+        <OnIdiom.Tablet>28</OnIdiom.Tablet>
+        <OnIdiom.Desktop>28</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="MenuFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>20</OnIdiom.Phone>
+        <OnIdiom.Tablet>30</OnIdiom.Tablet>
+        <OnIdiom.Desktop>30</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LargeFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>22</OnIdiom.Phone>
+        <OnIdiom.Tablet>32</OnIdiom.Tablet>
+        <OnIdiom.Desktop>32</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="LargeLetterFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>30</OnIdiom.Phone>
+        <OnIdiom.Tablet>40</OnIdiom.Tablet>
+        <OnIdiom.Desktop>40</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="VeryLargeFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>50</OnIdiom.Phone>
+        <OnIdiom.Tablet>58</OnIdiom.Tablet>
+        <OnIdiom.Desktop>58</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom x:Key="ExtraLargeFontSize"
+             x:TypeArguments="x:Double">
+        <OnIdiom.Phone>76</OnIdiom.Phone>
+        <OnIdiom.Tablet>140</OnIdiom.Tablet>
+        <OnIdiom.Desktop>140</OnIdiom.Desktop>
+    </OnIdiom>
+
+</ResourceDictionary>
