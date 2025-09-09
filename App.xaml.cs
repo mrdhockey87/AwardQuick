@@ -1,4 +1,5 @@
-﻿using AwardQuick.Sizes;
+﻿using AwardQuick.CustomServices;
+using AwardQuick.Sizes;
 
 namespace AwardQuick
 {

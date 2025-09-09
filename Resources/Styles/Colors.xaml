@@ -5,21 +5,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
 
-    <Color x:Key="Primary">#000080</Color>
+    <Color x:Key="Primary">#000000</Color>
     <Color x:Key="PrimaryBackground">#ffffff</Color>
     <Color x:Key="MainMenuBackground">#1b212a</Color>
     <Color x:Key="AppButtonText">#000000</Color>
     <Color x:Key="AppButtonTouchBackground">#ffd700</Color>
     <Color x:Key="AppButtonFocusBackground">#ffff00</Color>
     <Color x:Key="AppButtonHoverBackground">#eee8aa</Color>
-    <Color x:Key="PrimaryText">#000080</Color>
+    <Color x:Key="PrimaryText">#000000</Color>
     <Color x:Key="PrimaryDarkBackground">#000080</Color>
     <Color x:Key="PrimaryDarkText">#ffffff</Color>
     <Color x:Key="HomePageText">#b43d8c</Color>
     <Color x:Key="PrimaryLightBackground">#ffffff</Color>
-    <Color x:Key="PrimaryLightText">#000080</Color>
+    <Color x:Key="PrimaryLightText">#000000</Color>
     <Color x:Key="Secondary">#DFD8F7</Color>
-    <Color x:Key="SecondaryDarkText">#9880e5</Color>
+    <Color x:Key="SecondaryDarkText">#ffffff</Color>
     <Color x:Key="Tertiary">#2B0B98</Color>
     <Color x:Key="PrimaryIconLightMode">#666666</Color>
 

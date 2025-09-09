@@ -27,6 +27,9 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0004.0012 Got the About page working in the dialog, however it is not looking the way I want it to. It has a thick border around it
+ *                and I only want the title to have a background. THe About is using the dialog service which will work for many types
+ *                of dialod and replace the dialog aleret the is built in the maui. mdail  9-9-25
  *  v 2.0004.0011 Added the sizes resource directory. Got the flyout menu to work with the custom control. Added images for the menu.
  *                got the line to work on the menu. Some of the methods to display things from the menu are not done yet. Fix some 
  *                missspelled views mdail  9-6-25

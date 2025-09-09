@@ -1,4 +1,5 @@
-﻿using AwardQuick.Views;
+﻿using AwardQuick.CustomServices;
+using AwardQuick.Views;
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 using Font = Microsoft.Maui.Font;
@@ -7,11 +8,13 @@ namespace AwardQuick
 {
     public partial class AppShell : Shell
     {
+        private readonly IDialogService _dialogService;
         private bool isNavigating = false; // Flag to track navigation
         public AppShell()
         {
             InitializeComponent();
             RegisterRoutes();
+            _dialogService = new ShellDialogService();
             BindingContext = this;
             this.Navigated += OnNavigated;
             this.Loaded += OnLoaded;
@@ -28,6 +31,7 @@ namespace AwardQuick
             Routing.RegisterRoute("StatementCitations", typeof(StatementCitationsView));
             Routing.RegisterRoute("WebResources", typeof(WebResourcesView));
             Routing.RegisterRoute("WritingTools", typeof(WritingToolsView));
+            //Routing.RegisterRoute(nameof(Overlays.CustomDialogPage), typeof(Overlays.CustomDialogPage));
         }
         public async Task OnMenuItemClicked(string route)
         {
@@ -87,13 +91,20 @@ namespace AwardQuick
             try
             {
                 //TODO: make an about overlay view mdail 9-5-2025
-                //await OnMenuItemClicked("///" + route);
+                string title = "About Award Quick";
+                string SerialNumber = "SN-000-000-000";
+                string message = $"Award Quick" + Environment.NewLine + "Version: " + AppVersion.AppVersionNo + Environment.NewLine + "Build: " + AppVersion.AppBuildNo +
+                     Environment.NewLine + Environment.NewLine + "Serial Number: " + SerialNumber + Environment.NewLine + Environment.NewLine +
+                    "Award Quick is a tool designed to assist in the creation of military awards and decorations. " + Environment.NewLine +
+                    "It provides templates, references, and writing tools to streamline the award writing process." + Environment.NewLine + Environment.NewLine +
+                    "Copyright © 2025  All rights reserved. Mentor Enterprises, Inc." + Environment.NewLine + "(www.MentorEnterprisesInc.com)";
+                await _dialogService.ShowAlertAsync(title, message);
             }
             catch (Exception ex)
             {
                 //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
                 //await OnMenuItemClicked("///About");
-                await DisplayAlert("⚠️" + " Error", "Error opening about page!", "OK");
+                await DisplayAlert("⚠️" + " Error", "Error opening about page! Error = " + ex.Message, "OK");
                 ProgressService.Instance.HideProgress();
                 Console.WriteLine($"Error opening About: {ex.Message}");
             }
