@@ -13,16 +13,17 @@
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
 
-    <Grid>
-        <Border BackgroundColor="{StaticResource PrimaryText}"
-                Padding="10"
-                Margin="10"
+    <Grid BackgroundColor="#80000000">
+        <Border BackgroundColor="{StaticResource PrimaryBackground}"
+                Margin="0"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                StrokeThickness="0"
-                Stroke="Transparent">
+                StrokeThickness="2"
+                StrokeShape="Rectangle"
+                Stroke="{StaticResource PrimaryText}"
+                Padding="0">
 
-            <Grid>
+            <Grid Margin="0" Padding="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
@@ -32,59 +33,84 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0"
-                       Grid.Column="0"
-                       x:Name="TitleLabel"
-                       FontSize="18"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center"
-                       BackgroundColor="{StaticResource PrimaryText}"
-                       TextColor="{StaticResource PrimaryBackground}" />
 
-                <Label Grid.Row="1"
-                       Grid.Column="0"
-                       x:Name="MessageLabel"
-                       LineBreakMode="WordWrap"
-                       FontSize="16"
-                       Margin="20,5,25,5"
-                       HorizontalOptions="Center"
-                       HorizontalTextAlignment="Center"
-                       BackgroundColor="{StaticResource PrimaryBackground}"
-                       TextColor="{StaticResource Gray500}" />
+                <!-- Title Bar Row -->
+                <Grid Grid.Row="0"
+                      Grid.Column="0"
+                      BackgroundColor="{StaticResource PrimaryText}">
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="Center"
+                                 Padding="10,0">
 
-                <StackLayout Grid.Row="2"
-                             Grid.Column="0"
-                             x:Name="InputContainer"
-                             IsVisible="False">
-                    <Entry x:Name="InputEntry"
-                           Placeholder="Enter text..."
-                           Margin="0,10,0,0" />
-                </StackLayout>
+                        <!-- Optional Icon Image -->
+                        <Image x:Name="IconImage"
+                               Source="{Binding IconSource}"
+                               IsVisible="{Binding IsIconVisible}"
+                               WidthRequest="22"
+                               HeightRequest="22"
+                               VerticalOptions="Center"
+                               Margin="0,2,8,2" />
 
+                        <!-- Title Label -->
+                        <Label x:Name="TitleLabel"
+                               Text="{Binding Title}"
+                               FontSize="18"
+                               Margin="0,2,0,2"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               TextColor="{StaticResource PrimaryBackground}" />
+                    </StackLayout>
+                </Grid>
 
+                <!-- Message Row -->
+                <Grid Grid.Row="1"
+                      Grid.Column="0"
+                      BackgroundColor="{StaticResource PrimaryBackground}">
+                    <Label x:Name="MessageLabel"
+                           LineBreakMode="WordWrap"
+                           FontSize="16"
+                           Margin="20,15,20,15"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Start"
+                           VerticalOptions="Center"
+                           TextColor="{StaticResource PrimaryText}" />
+                </Grid>
+
+                <!-- Input Row -->
+                <Grid Grid.Row="2"
+                      Grid.Column="0"
+                      BackgroundColor="{StaticResource PrimaryBackground}">
+                    <StackLayout x:Name="InputContainer"
+                                 IsVisible="False"
+                                 Margin="20,0,20,15">
+                        <Entry x:Name="InputEntry"
+                               Placeholder="Enter text..."
+                               Margin="0,10,0,0" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- Button Row -->
                 <Grid Grid.Row="3"
-                      Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                      Grid.Column="0"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
+                      Padding="20,0,20,15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Row="0"
-                            Grid.Column="1"
+                    <Button Grid.Column="1"
                             x:Name="CancelButton"
                             Text="Cancel"
-                            BackgroundColor="{StaticResource PrimaryText}"
-                            TextColor="{StaticResource PrimaryBackground}"
+                            BackgroundColor="{StaticResource Gray300}"
+                            TextColor="{StaticResource PrimaryText}"
                             IsVisible="False"
                             Clicked="OnCancelClicked"
-                            MinimumWidthRequest="80" />
+                            MinimumWidthRequest="80"
+                            Margin="0,0,10,0" />
 
-                    <Button Grid.Row="0"
-                            Grid.Column="2"
+                    <Button Grid.Column="2"
                             x:Name="OkButton"
                             Text="OK"
                             BackgroundColor="{StaticResource PrimaryText}"

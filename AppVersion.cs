@@ -27,6 +27,12 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0005.0016 Added the Statment Citations page and  need to move some of the code to the4 view model. It is useing synfusion tabview control
+ *                to display the different tabs and subtabs. I added the Html pages but the seem to now have any style to them. I need to add
+ *                stly to make them look batter. mdail  9-10-25
+ *  v 2.0004.0015 Changed the magenta type color to a reder color. Changed the SVG files, the color the xaml, and the icon svg file. mdail  9-10-25
+ *  v 2.0004.0014 Added fontawsome fonts to the project and maui program. Added helpers classes for all 3 font files. mdail  9-10-25
+ *  v 2.0004.0013 Fixed the About page to look the way I want it to. Added an optional icon to the title line of the dialog. mdail  9-10-25
  *  v 2.0004.0012 Got the About page working in the dialog, however it is not looking the way I want it to. It has a thick border around it
  *                and I only want the title to have a background. THe About is using the dialog service which will work for many types
  *                of dialod and replace the dialog aleret the is built in the maui. mdail  9-9-25

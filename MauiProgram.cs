@@ -22,6 +22,9 @@ namespace AwardQuick
                 })
                 .ConfigureFonts(fonts =>
                 {
+                    fonts.AddFont("Font Awesome 7 Brands-Regular-400.otf", "FontAwesomeBrands");
+                    fonts.AddFont("Font Awesome 7 Free-Regular-400.otf", "FontAwesomeRegular");
+                    fonts.AddFont("Font Awesome 7 Free-Solid-900.otf", "FontAwesomeSolid");
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("SegoeUI-Semibold.ttf", "SegoeSemibold");

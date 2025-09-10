@@ -15,7 +15,7 @@
     <Color x:Key="PrimaryText">#000000</Color>
     <Color x:Key="PrimaryDarkBackground">#000080</Color>
     <Color x:Key="PrimaryDarkText">#ffffff</Color>
-    <Color x:Key="HomePageText">#b43d8c</Color>
+    <Color x:Key="HomePageText">#c03138</Color>
     <Color x:Key="PrimaryLightBackground">#ffffff</Color>
     <Color x:Key="PrimaryLightText">#000000</Color>
     <Color x:Key="Secondary">#DFD8F7</Color>

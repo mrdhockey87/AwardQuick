@@ -98,7 +98,7 @@ namespace AwardQuick
                     "Award Quick is a tool designed to assist in the creation of military awards and decorations. " + Environment.NewLine +
                     "It provides templates, references, and writing tools to streamline the award writing process." + Environment.NewLine + Environment.NewLine +
                     "Copyright © 2025  All rights reserved. Mentor Enterprises, Inc." + Environment.NewLine + "(www.MentorEnterprisesInc.com)";
-                await _dialogService.ShowAlertAsync(title, message);
+                await _dialogService.ShowAlertAsync(title, message,"OK","about.png");
             }
             catch (Exception ex)
             {
