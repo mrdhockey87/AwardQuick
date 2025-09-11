@@ -56,13 +56,17 @@
                                   Grid.ColumnSpan="2"
                                   x:Name="MainTabView"
                                   TabBarBackground="{StaticResource PrimaryText}"
+                                  IndicatorPlacement="Fill"
+                                  IndicatorBackground="{StaticResource HomePageText}"
                                   SelectionChanged="OnMainTabSelectionChanged">
 
                 <!-- Achievement Statements Tab -->
                 <syncfusion:SfTabItem Header="Achievement Statements"
                                       TextColor="{StaticResource PrimaryBackground}">
                     <syncfusion:SfTabView x:Name="AchievementNestedTabView"
-                                          TabBarBackground="{StaticResource HomePageText}"
+                                          TabBarBackground="{StaticResource PrimaryBackground}"
+                                          IndicatorPlacement="Fill"
+                                          IndicatorBackground="{StaticResource HomePageText}"
                                           SelectionChanged="OnNestedTabSelectionChanged">
 
                         <syncfusion:SfTabItem Header="Deployment" TextColor="{StaticResource PrimaryText}">
@@ -103,7 +107,9 @@
                 <syncfusion:SfTabItem Header="Opening Statements"
                                       TextColor="{StaticResource PrimaryBackground}">
                     <syncfusion:SfTabView x:Name="OpeningNestedTabView"
-                                          TabBarBackground="{StaticResource HomePageText}"
+                                          TabBarBackground="{StaticResource PrimaryBackground}"
+                                          IndicatorPlacement="Fill"
+                                          IndicatorBackground="{StaticResource HomePageText}"
                                           SelectionChanged="OnNestedTabSelectionChanged">
 
                         <syncfusion:SfTabItem Header="Deployment" TextColor="{StaticResource PrimaryText}">
@@ -144,7 +150,9 @@
                 <syncfusion:SfTabItem Header="Helping Statements"
                                       TextColor="{StaticResource PrimaryBackground}">
                     <syncfusion:SfTabView x:Name="HelpingNestedTabView"
-                                          TabBarBackground="{StaticResource HomePageText}"
+                                          TabBarBackground="{StaticResource PrimaryBackground}"
+                                          IndicatorPlacement="Fill"
+                                          IndicatorBackground="{StaticResource HomePageText}"
                                           SelectionChanged="OnNestedTabSelectionChanged">
 
                         <syncfusion:SfTabItem Header="Deployment" TextColor="{StaticResource PrimaryText}">
@@ -185,7 +193,9 @@
                 <syncfusion:SfTabItem Header="Citations"
                                       TextColor="{StaticResource PrimaryBackground}">
                     <syncfusion:SfTabView x:Name="CitationsNestedTabView"
-                                          TabBarBackground="{StaticResource HomePageText}"
+                                          TabBarBackground="{StaticResource PrimaryBackground}"
+                                          IndicatorPlacement="Fill"
+                                          IndicatorBackground="{StaticResource HomePageText}"
                                           SelectionChanged="OnNestedTabSelectionChanged">
 
                         <syncfusion:SfTabItem Header="Deployment" TextColor="{StaticResource PrimaryText}">

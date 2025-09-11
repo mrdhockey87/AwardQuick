@@ -27,6 +27,13 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0005.0017 Changed the Statment Citations page to use it view model, also changed the backgroud color of the selected tab to the same as the 
+ *                inages and bottom text on the main page, changed that color to be more red & fixed icon too. also added code to use gzip files 
+ *                for the html pages, text files & PDF file which use a different method to read and then need to 
+ *                use var ms = await ReadDecompressedAssetAsync("document.pdf.gz"); to read, then to display use var bytes = ms.ToArray();.
+ *                then display the bytes in the PDF viewer. Set the License page to use the compressed version of the file, still need to compress 
+ *                and edit the other html pages to look better. Also added a html helper class so the raw html text goes in there and return to the page
+ *                so I do have to have the raw html inside the code pages. mdail  9-11-25
  *  v 2.0005.0016 Added the Statment Citations page and  need to move some of the code to the4 view model. It is useing synfusion tabview control
  *                to display the different tabs and subtabs. I added the Html pages but the seem to now have any style to them. I need to add
  *                stly to make them look batter. mdail  9-10-25
