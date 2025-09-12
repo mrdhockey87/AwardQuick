@@ -205,58 +205,8 @@ namespace AwardQuick.Utilities
     </div>
 </body>
 </html>";
-        public static string StatementGetHtmlFilePath(string contentKey)
-        {
-            // Map content keys to actual file paths in Resources/Raw
-            return contentKey switch
-            {
-                // Achievement Statements
-                "AchievementDeployment" => "Statements/Achievement/Achievement-Deployment.html",
-                "AchievementInspection" => "Statements/Achievement/Achievement-Inspection.html",
-                "AchievementLeadership" => "Statements/Achievement/Achievement-Leadership.html",
-                "AchievementRecognition" => "Statements/Achievement/Achievement-Recognition.html",
-                "AchievementSpecial" => "Statements/Achievement/Achievement-Special.html",
-                "AchievementStaff" => "Statements/Achievement/Achievement-Staff.html",
-                "AchievementVolunteer" => "Statements/Achievement/Achievement-Volunteer.html",
-                "AchievementMiscellaneous" => "Statements/Achievement/Achievement-Misc.html",
-
-                // Opening Statements
-                "OpeningDeployment" => "Statements/Opening/Opening-Deployment.html",
-                "OpeningInspection" => "Statements/Opening/Opening-Inspection.html",
-                "OpeningLeadership" => "Statements/Opening/Opening-Leadership.html",
-                "OpeningRecognition" => "Statements/Opening/Opening-Recognition.html",
-                "OpeningSpecial" => "Statements/Opening/Opening-Special.html",
-                "OpeningStaff" => "Statements/Opening/Opening-Staff.html",
-                "OpeningVolunteer" => "Statements/Opening/Opening-Volunteer.html",
-                "OpeningMiscellaneous" => "Statements/Opening/Opening-Misc.html",
-
-                // Helping Statements
-                "HelpingDeployment" => "Statements/Helping/Helping-Deployment.html",
-                "HelpingInspection" => "Statements/Helping/Helping-Inspection.html",
-                "HelpingLeadership" => "Statements/Helping/Helping-Leadership.html",
-                "HelpingRecognition" => "Statements/Helping/Helping-Recognition.html",
-                "HelpingSpecial" => "Statements/Helping/Helping-Special.html",
-                "HelpingStaff" => "Statements/Helping/Helping-Staff.html",
-                "HelpingVolunteer" => "Statements/Helping/Helping-Volunteer.html",
-                "HelpingMiscellaneous" => "Statements/Helping/Helping-Misc.html",
-
-                // Citations
-                "CitationsDeployment" => "Statements/Citations/Citations-Deployment.html",
-                "CitationsInspection" => "Statements/Citations/Citations-Inspection.html",
-                "CitationsLeadership" => "Statements/Citations/Citations-Leadership.html",
-                "CitationsRecognition" => "Statements/Citations/Citations-Recognition.html",
-                "CitationsSpecial" => "Statements/Citations/Citations-Special.html",
-                "CitationsStaff" => "Statements/Citations/Citations-Staff.html",
-                "CitationsVolunteer" => "Statements/Citations/Citations-Volunteer.html",
-                "CitationsMiscellaneous" => "Statements/Citations/Citations-Misc.html",
-
-                // Closing Sentences
-                "ClosingSentences" => "Statements/Closing/Closing.html",
-                _ => ""
-            };
-        }
-        /* This is for when all files are compressed
-         * public static string StatementGetHtmlFilePath(string contentKey)
+        
+         public static string StatementGetHtmlFilePath(string contentKey)
          {
              // Map content keys to actual file paths in Resources/Raw
              return contentKey switch
@@ -306,7 +256,7 @@ namespace AwardQuick.Utilities
 
                  _ => ""
              };
-         }*/
+         }
 
         public static string StatementGenerateErrorHtml(string mainTab, string nestedTab, string errorMessage)
         {

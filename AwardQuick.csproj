@@ -30,7 +30,7 @@
 		<ApplicationId>com.companyname.awardquick</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>2.0005.0017</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>2.0005.0019</ApplicationDisplayVersion>
 		<ApplicationVersion>2</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->

@@ -27,6 +27,9 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0005.0019 Compressed all the html files for the statement citations page. mdail  9-12-25
+ *  v 2.0005.0018 Fixed the home screen image text being not clear, added the full.css and the code to add it to the html pages. The pages now look correct
+ *                and and have the rigtht font size. mdail  9-12-25
  *  v 2.0005.0017 Changed the Statment Citations page to use it view model, also changed the backgroud color of the selected tab to the same as the 
  *                inages and bottom text on the main page, changed that color to be more red & fixed icon too. also added code to use gzip files 
  *                for the html pages, text files & PDF file which use a different method to read and then need to 
