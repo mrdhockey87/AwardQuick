@@ -1,0 +1,55 @@
+body {
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	margin:30px;
+	line-height:150%;
+}
+
+td, th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+a {
+	color: #333333;
+	text-decoration: underline;
+}
+
+form {
+}
+
+.title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	line-height: 30px;
+	color: #1c222b;
+	text-indent: 0;
+	font-weight:bold;
+
+}
+
+
+div.blank{
+	text-align:center;
+	overflow:visible;
+	padding-top:50px;
+}
+p.title-blank {
+	font-weight:bold;
+	
+	line-height:100%;
+	overflow:visible;
+	font-size:48px;
+	color:#BC4095;
+	text-align:center;
+}
+
+img.image-blank {
+	text-align:center;
+	float:none;
+	margin:0 auto;
+
+}

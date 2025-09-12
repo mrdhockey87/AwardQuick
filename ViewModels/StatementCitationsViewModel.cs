@@ -133,9 +133,9 @@ namespace AwardQuick.ViewModels
 
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    string? htmlContent = await LoadHtmlFromFileAsync(filePath);
-                    //When I compress the html files I need to use this code to read them back mdail 9-11-25
-                    //string? html = await ReadDecompressedAsset.ReadDecompressedAssetAsync(filePath);
+                    // Use the new method that includes CSS styling and handles compressed files & uncompressed files
+                    // it check the file extension to determine the method to use mdail 9-12-25
+                    string? htmlContent = await GeneratedHtml.LoadAndFormatStatementHtmlAsync(filePath);
 
                     if (!string.IsNullOrEmpty(htmlContent))
                     {
@@ -167,21 +167,20 @@ namespace AwardQuick.ViewModels
             // Map content keys to actual file paths in Resources/Raw
             return GeneratedHtml.StatementGetHtmlFilePath(contentKey);
         }
-
+        /*
         public async Task<string?> LoadHtmlFromFileAsync(string filePath)
         {
             try
             {
-                using var stream = await FileSystem.OpenAppPackageFileAsync(filePath);
-                using var reader = new StreamReader(stream);
-                return await reader.ReadToEndAsync();
+                // Use the new method that includes CSS styling and handles compressed files
+                return await GeneratedHtml.LoadAndFormatStatementHtmlAsync(filePath);
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error loading HTML file {filePath}: {ex.Message}");
                 return null;
             }
-        }
+        }*/
 
         public string GenerateDefaultHtml(string contentKey)
         {

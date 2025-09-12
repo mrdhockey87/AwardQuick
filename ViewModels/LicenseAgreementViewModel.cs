@@ -41,7 +41,7 @@ namespace AwardQuick.ViewModels
                 using var reader = new StreamReader(stream);
                 LicenseHtml = await reader.ReadToEndAsync();*/
                 //When I compress the html files I need to use this code to read them back mdail 9-11-25
-                string? html = await ReadDecompressedAsset.ReadDecompressedAssetAsync("AppLicense/License.html.gz");
+                string? html = await GeneratedHtml.LoadAndFormatStatementHtmlAsync("AppLicense/License.html.gz");
                 LicenseHtml = html ?? "License content could not be loaded.";
             }
             catch (Exception ex)
