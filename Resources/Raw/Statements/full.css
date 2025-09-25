@@ -1,15 +1,24 @@
 body {
-	background-color: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	color: #333333;
-	margin:30px;
-	line-height:150%;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+	line-height:160%;
+  background-color: #f9f9f9;
 }
 
+.container {
+    background: #ffffff;
+    padding: 30px;
+		max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 td, th {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	color: #333333;
 }
 
@@ -22,6 +31,7 @@ form {
 }
 
 .title {
+	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 30px;
 	line-height: 30px;
@@ -39,7 +49,7 @@ div.blank{
 }
 p.title-blank {
 	font-weight:bold;
-	
+
 	line-height:100%;
 	overflow:visible;
 	font-size:48px;

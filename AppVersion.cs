@@ -27,6 +27,7 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0006.0020 Fixed the css and html files for the Statement Citations page. The html files now look correct and like the License file. mdail  9-25-25
  *  v 2.0005.0019 Compressed all the html files for the statement citations page. mdail  9-12-25
  *  v 2.0005.0018 Fixed the home screen image text being not clear, added the full.css and the code to add it to the html pages. The pages now look correct
  *                and and have the rigtht font size. mdail  9-12-25
