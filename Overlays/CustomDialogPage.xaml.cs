@@ -5,6 +5,26 @@ public partial class CustomDialogPage : ContentPage
     private TaskCompletionSource<DialogResult> _tcs;
     private DialogType _dialogType;
 
+    private bool iconSource;
+    public bool IconSource
+    {
+        get => iconSource;
+        set
+        {
+            iconSource = value;
+            OnPropertyChanged();
+        }
+    }
+    private bool isIconVisible = false;
+    public bool IsIconVisible
+    {
+        get => isIconVisible;
+        set
+        {
+            isIconVisible = value;
+            OnPropertyChanged();
+        }
+    }
     public enum DialogType
     {
         Alert,
@@ -92,7 +112,7 @@ public partial class CustomDialogPage : ContentPage
     }
 
     // Updated ShowAlertAsync with optional icon
-    public static async Task ShowAlertAsync(string title, string message, string okText = "OK", string iconSource = null)
+    public static async Task ShowAlertAsync(string title, string message, string okText = "OK", string iconSource = "")
     {
         var dialogPage = new CustomDialogPage();
         dialogPage.SetupAlert(title, message, okText, iconSource);
@@ -112,7 +132,7 @@ public partial class CustomDialogPage : ContentPage
 
     // Updated ShowConfirmAsync with optional icon
     public static async Task<bool> ShowConfirmAsync(string title, string message,
-        string okText = "Yes", string cancelText = "No", string iconSource = null)
+        string okText = "Yes", string cancelText = "No", string iconSource = "")
     {
         var dialogPage = new CustomDialogPage();
         dialogPage.SetupConfirm(title, message, okText, cancelText, iconSource);
@@ -133,7 +153,7 @@ public partial class CustomDialogPage : ContentPage
 
     // Updated ShowPromptAsync with optional icon
     public static async Task<string> ShowPromptAsync(string title, string message,
-        string placeholder = "", string okText = "OK", string cancelText = "Cancel", string iconSource = null)
+        string placeholder = "", string okText = "OK", string cancelText = "Cancel", string iconSource = "")
     {
         var dialogPage = new CustomDialogPage();
         dialogPage.SetupPrompt(title, message, placeholder, okText, cancelText, iconSource);
@@ -153,7 +173,7 @@ public partial class CustomDialogPage : ContentPage
     }
 
     // Updated setup methods
-    private void SetupAlert(string title, string message, string okText, string iconSource = null)
+    private void SetupAlert(string title, string message, string okText, string iconSource = "")
     {
         _dialogType = DialogType.Alert;
         _tcs = new TaskCompletionSource<DialogResult>();
@@ -167,7 +187,7 @@ public partial class CustomDialogPage : ContentPage
         InputContainer.IsVisible = false;
     }
 
-    private void SetupConfirm(string title, string message, string okText, string cancelText, string iconSource = null)
+    private void SetupConfirm(string title, string message, string okText, string cancelText, string iconSource = "")
     {
         _dialogType = DialogType.Confirm;
         _tcs = new TaskCompletionSource<DialogResult>();
@@ -182,7 +202,7 @@ public partial class CustomDialogPage : ContentPage
         InputContainer.IsVisible = false;
     }
 
-    private void SetupPrompt(string title, string message, string placeholder, string okText, string cancelText, string iconSource = null)
+    private void SetupPrompt(string title, string message, string placeholder, string okText, string cancelText, string iconSource = "")
     {
         _dialogType = DialogType.Prompt;
         _tcs = new TaskCompletionSource<DialogResult>();

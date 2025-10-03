@@ -16,8 +16,8 @@ namespace AwardQuick
             RegisterRoutes();
             _dialogService = new ShellDialogService();
             BindingContext = this;
-            this.Navigated += OnNavigated;
-            this.Loaded += OnLoaded;
+            this.Navigated += OnShellNavigated;
+            this.Loaded += OnShellLoaded;
         }
 
         private void RegisterRoutes()
@@ -144,7 +144,7 @@ namespace AwardQuick
 
         public static async Task DisplaySnackbarAsync(string message)
         {
-            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+            CancellationTokenSource cancellationTokenSource = new();
 
             var snackbarOptions = new SnackbarOptions
             {
@@ -173,27 +173,33 @@ namespace AwardQuick
             await toast.Show(cts.Token);
         }
 
-        private void SfSegmentedControl_SelectionChanged(object sender, Syncfusion.Maui.Toolkit.SegmentedControl.SelectionChangedEventArgs e)
+        private void SfSegmentedControl_SelectionChanged(object? sender, Syncfusion.Maui.Toolkit.SegmentedControl.SelectionChangedEventArgs e)
         {
             Application.Current!.UserAppTheme = e.NewIndex == 0 ? AppTheme.Light : AppTheme.Dark;
         }
 
-        private void OnNavigated(object sender, ShellNavigatedEventArgs e)
+        private void OnShellNavigated(object? sender, ShellNavigatedEventArgs e)
         {
-
-        }
-        private async void OnLoaded(object sender, EventArgs e)
-        {
-            if (DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
+            if (e != null)
             {
-                // Multiple refresh attempts with different delays
-                /*   await Task.Delay(50);
-                   RefreshMenuBar();
-                   await Task.Delay(150);
-                   RefreshMenuBar();
-                   await Task.Delay(300);
-                   RefreshMenuBar();*/
             }
+        }
+
+        private async void OnShellLoaded(object? sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                if (DeviceInfo.Current.Platform == DevicePlatform.MacCatalyst)
+                {
+                    // Multiple refresh attempts with different delays
+                    /*   await Task.Delay(50);
+                       RefreshMenuBar();
+                       await Task.Delay(150);
+                       RefreshMenuBar();
+                       await Task.Delay(300);
+                       RefreshMenuBar();*/
+                }
+            });
         }
 
     }

@@ -72,7 +72,7 @@ namespace AwardQuick.Services
         {
             // Access the main window directly
             if (Application.Current == null || Application.Current.Windows.Count == 0)
-                return null;
+                return new ContentPage();
             var currentWindow = Application.Current.Windows[0];
             var mainPage = currentWindow?.Page;
             if (mainPage is Shell shell)

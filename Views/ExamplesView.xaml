@@ -3,22 +3,97 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
              xmlns:overlay="clr-namespace:AwardQuick.Overlays"
+             x:DataType="viewModels:ExamplesViewModel"
+             BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="AwardQuick.Views.ExamplesView"
              Title="Examples">
     <ContentPage.BindingContext>
-        <viewModels:ExamplesViewModel x:Name="evm" />
+        <viewModels:ExamplesViewModel x:Name="examplesViewModel" />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="20,20,20,10"
+                    Text="DA Form 638 Example"
+                    BorderColor="{StaticResource PrimaryText}"
+                    BorderWidth="2"
+                    Command="{Binding Source={x:Reference examplesViewModel}, Path=DAForm638Command}"
+                    TextColor="{StaticResource PrimaryText}"
+                    BackgroundColor="{StaticResource PrimaryBackground}" />
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="20,20,20,10"
+                    Text="DA Form 7594 Example"
+                    BorderColor="{StaticResource PrimaryText}"
+                    BorderWidth="2"
+                    Command="{Binding Source={x:Reference examplesViewModel}, Path=DAForm7594Command}"
+                    TextColor="{StaticResource PrimaryText}"
+                    BackgroundColor="{StaticResource PrimaryBackground}" />
+
+
+            <Button Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="20,0,20,10"
+                    Text="Legon Of Merit Narrative and Citation"
+                    BorderColor="{StaticResource PrimaryText}"
+                    BorderWidth="2"
+                    Command="{Binding Source={x:Reference examplesViewModel}, Path=LegonOfMeritCommand}"
+                    TextColor="{StaticResource PrimaryText}"
+                    BackgroundColor="{StaticResource PrimaryBackground}" />
+
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="20,0,20,10"
+                    Text="Medal of Honor Citation"
+                    BorderColor="{StaticResource PrimaryText}"
+                    BorderWidth="2"
+                    Command="{Binding Source={x:Reference examplesViewModel}, Path=MedalOfHonorCommand}"
+                    TextColor="{StaticResource PrimaryText}"
+                    BackgroundColor="{StaticResource PrimaryBackground}" />
+
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Margin="0,30,0,0"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   FontSize="16"
+                   Text="Bronze Star Narratives and Citations"
+                   TextColor="{StaticResource PrimaryText}"
+                   BackgroundColor="{StaticResource PrimaryBackground}" />
+
+            <Grid
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2">
+                <Rectangle
+                    Fill="{StaticResource PrimaryText}"
+                    HeightRequest="4"
+                    HorizontalOptions="Fill" />
+            </Grid>
+
             <overlay:ProgressBarOverlay x:Name="progressBarOverlay"
                                         Grid.Row="1"
                                         Grid.Column="0" />

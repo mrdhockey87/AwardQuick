@@ -27,6 +27,9 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 2.0006.0021 Started the Examples page with the top 4 buttons, the line across and the label just above the line. Still need to add what the
+ *                original had on the second page to the bottom of the page. The research into handling open the PDF for the Couseling I determined
+ *                that because of the form, it can't be done as a pdf, It would need to be a html then printed as a pdf. mdail  10-3-25
  *  v 2.0006.0020 Fixed the css and html files for the Statement Citations page. The html files now look correct and like the License file. mdail  9-25-25
  *  v 2.0005.0019 Compressed all the html files for the statement citations page. mdail  9-12-25
  *  v 2.0005.0018 Fixed the home screen image text being not clear, added the full.css and the code to add it to the html pages. The pages now look correct
