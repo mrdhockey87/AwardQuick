@@ -43,12 +43,13 @@ namespace AwardQuick
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ReferencesViewModel>();
             builder.Services.AddSingleton<ReferencesView>();
-            builder.Services.AddSingleton<StatementCitationsViewModel>();
-            builder.Services.AddSingleton<StatementCitationsView>();
+            builder.Services.AddTransient<StatementCitationsViewModel>();
+            builder.Services.AddTransient<StatementCitationsView>();
             builder.Services.AddSingleton<WebResourcesViewModel>();
             builder.Services.AddSingleton<WebResourcesView>();
             builder.Services.AddSingleton<WritingToolsViewModel>();
-            builder.Services.AddSingleton<WritingToolsView>();
+            builder.Services.AddSingleton<WritingToolsView>(); 
+            builder.Services.AddSingleton<IPdfService, PdfService>();
             return builder.Build();
         }
     }
