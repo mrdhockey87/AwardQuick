@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AwardQuick.Utilities;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,10 @@ namespace AwardQuick.ViewModels
         public ICommand CCVersion4Command { get; }
         public ICommand CSMCommand { get; }
 
+        // NEW: parameterless ctor for XAML
+        public ExamplesViewModel() : this(ServiceHelper.GetService<IPdfService>())
+        {
+        }
         public ExamplesViewModel(IPdfService pdfService)
         {
             DAForm638Command = new AsyncRelayCommand(DAForm638CommandExecute);

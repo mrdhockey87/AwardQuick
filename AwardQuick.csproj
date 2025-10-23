@@ -30,8 +30,8 @@
 		<ApplicationId>com.companyname.awardquick</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>2.007.0022</ApplicationDisplayVersion>
-		<ApplicationVersion>2</ApplicationVersion>
+		<ApplicationDisplayVersion>3.008.0022</ApplicationDisplayVersion>
+		<ApplicationVersion>3</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
 		<WindowsPackageType>None</WindowsPackageType>
@@ -65,14 +65,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.110" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.120" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
-		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.10" />
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />
 		<PackageReference Include="Syncfusion.Maui.Toolkit" Version="1.0.7" />
 		<PackageReference Include="Vitvov.Maui.PDFView" Version="1.5.0" />
@@ -112,6 +112,9 @@
 	  <MauiXaml Update="Views\LettersMemosView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PdfView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\ReferencesView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -128,7 +131,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Data\" />
-	  <Folder Include="Models\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\PdfFormFramework\PdfFormFramework\PdfFormFramework.csproj" />
 	</ItemGroup>
 	
 </Project>

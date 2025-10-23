@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
+             xmlns:overlay="clr-namespace:AwardQuick.Overlays"
+             xmlns:controls="clr-namespace:PdfFormFramework.Controls;assembly=PdfFormFramework"
+             xmlns:models="clr-namespace:AwardQuick.Models"
+             xmlns:helpers="clr-namespace:AwardQuick.FontHelpers"
+             x:DataType="viewModels:PdfViewModel"
+             x:Class="AwardQuick.Views.PdfView"
+             x:Name="PdfViewForm"
+             BackgroundColor="{StaticResource PrimaryBackground}"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             Loaded="Page_Loaded"
+             Title="PDF Pages">
+
+    <ContentPage.BindingContext>
+        <viewModels:PdfViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <!-- Header -->
+        <!--   <Label Grid.Row="0"
+        Grid.Column="0"
+        TextColor="{DynamicResource PrimaryText}"
+        FontSize="24"
+        FontAttributes="Bold"
+        Margin="10"
+        HorizontalOptions="StartAndExpand"
+        VerticalOptions="Center"
+        HorizontalTextAlignment="Start"
+        Text="PDF Pages" />
+
+        <Button Grid.Row="0"
+        Grid.Column="1"
+        Clicked="OnBackClicked"
+        Text="Go Back"
+        HorizontalOptions="End"
+        TextColor="{DynamicResource PrimaryText}"
+        ContentLayout="Left,5">
+        <Button.ImageSource>
+        <FontImageSource
+        FontFamily="FontAwesomeSolid"
+        Glyph="{x:Static helpers:FontAwesomeSolidHelper.ArrowLeft}"
+        Color="Black" />
+        </Button.ImageSource>
+        </Button> -->
+
+        <!-- PDF Form View (row 1) -->
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="White"
+                Stroke="Gray"
+                StrokeThickness="1"
+                Margin="5">
+            <controls:PdfInteractiveFormView
+                x:Name="FormView"
+                x:TypeArguments="models:PdfFormData"
+                HeightRequest="600"
+                BackgroundColor="White" />
+        </Border>
+
+        <!-- Buttons (row 2) -->
+        <FlexLayout
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Padding="10"
+            HorizontalOptions="Fill"
+            JustifyContent="SpaceEvenly"
+            Direction="Row">
+            <Button
+                Text="Email Form"
+                TextColor="Black"
+                BackgroundColor="LightGray"
+                Clicked="OnEmailClicked" />
+            <Button
+                Text="Print"
+                TextColor="Black"
+                BackgroundColor="LightGray"
+                Clicked="OnPrintClicked" />
+        </FlexLayout>
+
+        <!-- Progress overlay on top -->
+        <overlay:ProgressBarOverlay x:Name="progressBarOverlay"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2" />
+    </Grid>
+</ContentPage>

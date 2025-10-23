@@ -40,6 +40,8 @@ namespace AwardQuick
             builder.Services.AddSingleton<LicenseAgreementViewModel>();
             builder.Services.AddSingleton<LicenseAgreementView>();
             builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddSingleton<PdfViewModel>();
+            builder.Services.AddSingleton<PdfView>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ReferencesViewModel>();
             builder.Services.AddSingleton<ReferencesView>();
