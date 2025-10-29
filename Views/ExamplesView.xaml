@@ -308,9 +308,9 @@
                     TextColor="{StaticResource PrimaryText}"
                     BackgroundColor="{StaticResource PrimaryBackground}" />
 
-                <overlay:ProgressBarOverlay x:Name="progressBarOverlay"
-                                            Grid.Row="1"
-                                            Grid.Column="0" />
+                <overlay:ProgressOverlay x:Name="progressOverlay"
+                                         Grid.Row="1"
+                                         Grid.Column="0" />
             </Grid>
         </Grid>
 

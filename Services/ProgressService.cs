@@ -11,15 +11,15 @@ namespace AwardQuick.Services
     public class ProgressService
     {
         private static ProgressService? _instance;
-        private ProgressBarOverlay _overlay;
+        private ProgressOverlay _overlay;
 
         public static ProgressService Instance => _instance ??= new ProgressService();
 
         private ProgressService()
         {
-            _overlay = new ProgressBarOverlay();
+            _overlay = new ProgressOverlay();
         }
-        public ProgressBarOverlay GetOverlay()
+        public ProgressOverlay GetOverlay()
         {
             return _overlay;
         }

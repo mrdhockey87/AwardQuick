@@ -91,7 +91,7 @@
                        BackgroundColor="{StaticResource TransparentColor}"
                        FontSize="10" />
             </Grid>
-            <overlay:ProgressBarOverlay x:Name="progressBarOverlay"
+            <overlay:ProgressOverlay x:Name="progressOverlay"
                                         Grid.Row="1"
                                         Grid.Column="0" />
         </Grid>

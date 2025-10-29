@@ -19,9 +19,9 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <overlay:ProgressBarOverlay x:Name="progressBarOverlay"
-                                        Grid.Row="1"
-                                        Grid.Column="0" />
+            <overlay:ProgressOverlay x:Name="progressOverlay"
+                                     Grid.Row="1"
+                                     Grid.Column="0" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

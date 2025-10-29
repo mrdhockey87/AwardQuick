@@ -1,6 +1,7 @@
 ﻿using AwardQuick.Views;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using PdfSharp.Fonts;
 using Syncfusion.Maui.Toolkit.Hosting;
 
 namespace AwardQuick
@@ -9,6 +10,8 @@ namespace AwardQuick
     {
         public static MauiApp CreateMauiApp()
         {
+            // Initialize PDFsharp font resolver
+            GlobalFontSettings.FontResolver = new PdfFormFramework.Services.SystemFontResolver();
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
@@ -31,6 +34,7 @@ namespace AwardQuick
                     fonts.AddFont("FluentSystemIcons-Regular.ttf", FluentUI.FontFamily);
                 });
             // Register services and pages
+            builder.Services.AddSingleton<PdfView>();
             builder.Services.AddSingleton<ExamplesViewModel>();
             builder.Services.AddSingleton<ExamplesView>();
             builder.Services.AddSingleton<FormsViewModel>();
@@ -40,8 +44,6 @@ namespace AwardQuick
             builder.Services.AddSingleton<LicenseAgreementViewModel>();
             builder.Services.AddSingleton<LicenseAgreementView>();
             builder.Services.AddSingleton<MainPageViewModel>();
-            builder.Services.AddSingleton<PdfViewModel>();
-            builder.Services.AddSingleton<PdfView>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ReferencesViewModel>();
             builder.Services.AddSingleton<ReferencesView>();

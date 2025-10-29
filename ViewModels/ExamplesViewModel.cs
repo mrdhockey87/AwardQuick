@@ -1,4 +1,5 @@
 ﻿using AwardQuick.Utilities;
+using AwardQuick.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
@@ -29,11 +30,9 @@ namespace AwardQuick.ViewModels
         public ICommand S3OpsSGMCommand { get; }
         public ICommand CCVersion4Command { get; }
         public ICommand CSMCommand { get; }
-
-        // NEW: parameterless ctor for XAML
-        public ExamplesViewModel() : this(ServiceHelper.GetService<IPdfService>())
-        {
-        }
+        private static ExamplesView ExView;
+        public void SetView(ExamplesView exview) => ExView = exview;        
+        public ExamplesViewModel() : this(ServiceHelper.GetService<IPdfService>()) { }
         public ExamplesViewModel(IPdfService pdfService)
         {
             DAForm638Command = new AsyncRelayCommand(DAForm638CommandExecute);
@@ -55,117 +54,50 @@ namespace AwardQuick.ViewModels
             _pdfService = pdfService;
         }
 
-        private async Task DAForm638CommandExecute()
+
+        private Task DAForm638CommandExecute() => OpenInPdfViewAsync("ExampleDAFORM638.pdf.gz");
+        private Task DAForm7594CommandExecute() => OpenInPdfViewAsync("ExampleDAFORM7594.pdf.gz");
+        private Task LegonOfMeritCommandExecute() => OpenInPdfViewAsync("LOM.pdf.gz");
+        private Task MedalOfHonorCommandExecute() => OpenInPdfViewAsync("MedalOfHonorCitation.pdf.gz");
+        private Task OperationOfficerCommandExecute() => OpenInPdfViewAsync("BSMNarrativeandCitationSPO.pdf.gz");
+        private Task FirstSergeantCommandExecute() => OpenInPdfViewAsync("BSMNarrative1SG.pdf.gz");
+        private Task ExecutiveOfficerCommandExecute() => OpenInPdfViewAsync("BSMNarrativeandCitationXO.pdf.gz");
+        private Task PLTSergeantCommandExecute() => OpenInPdfViewAsync("BSMNarrativePLTSergeant.pdf.gz");
+        private Task CCVersion1CommandExecute() => OpenInPdfViewAsync("BSMNarrativeandCitationCdr.pdf.gz");
+        private Task S1NCOICCommandExecute() => OpenInPdfViewAsync("BSMNarrativeS1NCOIC.pdf.gz");
+        private Task CCVersion2CommandExecute() => OpenInPdfViewAsync("BSMNarrativeCdr2.pdf.gz");
+        private Task S4NCOICCommandExecute() => OpenInPdfViewAsync("BSMNarrativeS4NCOIC.pdf.gz");
+        private Task CCVersion3CommandExecute() => OpenInPdfViewAsync("BSMNarrativeCdr3.pdf.gz");
+        private Task S3OpsSGMCommandExecute() => OpenInPdfViewAsync("BSMNarrativeS3OpsSGM.pdf.gz");
+        private Task CCVersion4CommandExecute() => OpenInPdfViewAsync("BSMNarrativeCdr4.pdf.gz");
+        private Task CSMCommandExecute() => OpenInPdfViewAsync("BSMNarrativeandCitationCSM.pdf.gz");
+
+        // Replace the helper to navigate using the parameter dictionary (no manual encoding)
+        private async Task OpenInPdfViewAsync(string gzipFileName)
         {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
+            try
             {
-                await _pdfService.OpenPdfFromAssetsAsync("ExampleDAFORM638.pdf.gz");
-            });
-        }
-        private async Task DAForm7594CommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
+                var packagedPath = gzipFileName.Contains('/') ? gzipFileName : $"Examples/{gzipFileName}";
+
+                // Materialize to a local .pdf and capture the path
+                var localPdfPath = await _pdfService.MaterializePdfFromAssetsAsync(packagedPath);
+                if (string.IsNullOrWhiteSpace(localPdfPath) || !File.Exists(localPdfPath))
+                {
+                    if (ExView != null)
+                        await ExView.DisplayAlert("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
+                    return;
+                }
+
+                Constants.PdfFileName = localPdfPath;
+
+                await Shell.Current.GoToAsync("PdfViewer");
+            }
+            catch (Exception ex)
             {
-                await _pdfService.OpenPdfFromAssetsAsync("ExampleDAFORM7594.pdf.gz");
-            });
-        }
-        private async Task LegonOfMeritCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("LOM.pdf.gz");
-            });
-        }
-        private async Task MedalOfHonorCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("MedalOfHonorCitation.pdf.gz");
-            });
-        }
-        private async Task OperationOfficerCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeandCitationSPO.pdf.pdf.gz");
-            });
-        }
-        private async Task FirstSergeantCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrative1SG.pdf.gz");
-            });
-        }
-        private async Task ExecutiveOfficerCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeandCitationXO.pdf.gz");
-            });
-        }
-        private async Task PLTSergeantCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativePLTSergeant.pdf.gz");
-            });
-        }
-        private async Task CCVersion1CommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeandCitationCdr.pdf.gz");
-            });
-        }
-        private async Task S1NCOICCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeS1NCOIC.pdf.gz");
-            });
-        }
-        private async Task CCVersion2CommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeCdr2.pdf.pdf.gz");
-            });
-        }
-        private async Task S4NCOICCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeS4NCOIC.pdf.gz");
-            });
-        }
-        private async Task CCVersion3CommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeCdr3.pdfgz");
-            });
-        }
-        private async Task S3OpsSGMCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeS3OpsSGM.pdf.gz");
-            });
-        }
-        private async Task CCVersion4CommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeCdr4.pdf.gz");
-            });
-        }
-        private async Task CSMCommandExecute()
-        {
-            await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                await _pdfService.OpenPdfFromAssetsAsync("BSMNarrativeandCitationCSM.pdf.gz");
-            });
+                System.Diagnostics.Debug.WriteLine($"Navigation failed: {ex}");
+                if (ExView != null)
+                    await ExView.DisplayAlert("Navigation failed", ex.Message, "OK");
+            }
         }
     }
 }

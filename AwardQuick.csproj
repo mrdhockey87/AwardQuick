@@ -30,7 +30,7 @@
 		<ApplicationId>com.companyname.awardquick</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>3.008.0022</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>3.008.0024</ApplicationDisplayVersion>
 		<ApplicationVersion>3</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
@@ -79,6 +79,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Overlays\ProgressOverlay.xaml.cs">
+	    <DependentUpon>ProgressOverlay.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\LicenseAgreementViewViews.xaml.cs">
 	    <DependentUpon>LicenseAgreementViewLicenseAgreementViews.xaml</DependentUpon>
 	  </Compile>
@@ -94,7 +97,7 @@
 	  <MauiXaml Update="Overlays\CustomDialogPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Overlays\ProgressBarOverlay.xaml">
+	  <MauiXaml Update="Overlays\ProgressOverlay.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Sizes\AppSizes.xaml">

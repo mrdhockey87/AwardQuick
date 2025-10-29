@@ -23,6 +23,7 @@ namespace AwardQuick
         private void RegisterRoutes()
         {
             // Default views for other platforms
+            Routing.RegisterRoute("PdfViewer", typeof(PdfView));
             Routing.RegisterRoute("Examples", typeof(ExamplesView));
             Routing.RegisterRoute("Forms", typeof(FormsView));
             Routing.RegisterRoute("LettersMemos", typeof(LettersMemosView));

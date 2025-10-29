@@ -15,10 +15,6 @@
              Loaded="Page_Loaded"
              Title="PDF Pages">
 
-    <ContentPage.BindingContext>
-        <viewModels:PdfViewModel />
-    </ContentPage.BindingContext>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -92,9 +88,9 @@
         </FlexLayout>
 
         <!-- Progress overlay on top -->
-        <overlay:ProgressBarOverlay x:Name="progressBarOverlay"
-                                    Grid.Row="0"
-                                    Grid.Column="0"
-                                    Grid.ColumnSpan="2" />
+        <overlay:ProgressOverlay x:Name="progressOverlay"
+                                 Grid.Row="0"
+                                 Grid.Column="0"
+                                 Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
