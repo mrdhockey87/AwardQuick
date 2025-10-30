@@ -77,20 +77,20 @@ namespace AwardQuick.ViewModels
         {
             try
             {
-                var packagedPath = gzipFileName.Contains('/') ? gzipFileName : $"Examples/{gzipFileName}";
+                var packagedPath = gzipFileName.Contains('/') ? gzipFileName : $"Examples\\{gzipFileName}";
 
                 // Materialize to a local .pdf and capture the path
-                var localPdfPath = await _pdfService.MaterializePdfFromAssetsAsync(packagedPath);
-                if (string.IsNullOrWhiteSpace(localPdfPath) || !File.Exists(localPdfPath))
+                //var localPdfPath = await _pdfService.MaterializePdfFromAssetsAsync(packagedPath);
+                if (string.IsNullOrWhiteSpace(packagedPath) || !File.Exists(packagedPath))
                 {
                     if (ExView != null)
                         await ExView.DisplayAlert("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
                     return;
                 }
 
-                Constants.PdfFileName = localPdfPath;
-
-                await Shell.Current.GoToAsync("PdfViewer");
+                Constants.PdfFileName = packagedPath;
+                await MainThread.InvokeOnMainThreadAsync(async () => await Shell.Current.GoToAsync("PdfViewer"));
+                //await Shell.Current.GoToAsync("PdfViewer");
             }
             catch (Exception ex)
             {

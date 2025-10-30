@@ -1,5 +1,6 @@
 ﻿using AwardQuick.Views;
 using CommunityToolkit.Maui;
+using Maui.PDFView;
 using Microsoft.Extensions.Logging;
 using PdfSharp.Fonts;
 using Syncfusion.Maui.Toolkit.Hosting;
@@ -17,6 +18,7 @@ namespace AwardQuick
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .ConfigureSyncfusionToolkit()
+                .UseMauiPdfView()
                 .ConfigureMauiHandlers(handlers =>
                 {
 #if IOS || MACCATALYST
@@ -34,7 +36,7 @@ namespace AwardQuick
                     fonts.AddFont("FluentSystemIcons-Regular.ttf", FluentUI.FontFamily);
                 });
             // Register services and pages
-            builder.Services.AddSingleton<PdfView>();
+            builder.Services.AddTransient<PdfFileView>();
             builder.Services.AddSingleton<ExamplesViewModel>();
             builder.Services.AddSingleton<ExamplesView>();
             builder.Services.AddSingleton<FormsViewModel>();

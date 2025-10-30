@@ -27,6 +27,8 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 3.009.0025 Finally got the PDF view to work and display the PDFs. one of them was the PDF that used the wrong kind of fields so 
+ *               I had to print it to a Microsoft pdf file to flatten the fields. All the example forms now open and display correctly. mdail 10-30-25
  *  v 3.008.0024 Changed the name of the progress overlay to avoid naming confilct with the one in the framework mdail 10-29-25
  *  v 3.008.0023 Tried several ways to get the PDF form to open in the PDF viewer, but none worked. mdail 10-29-25
  *  v 3.008.0022 Start adding the framework for the PDF form handling. Added the PdfView and PdfViewModel. mdail  10-23-25

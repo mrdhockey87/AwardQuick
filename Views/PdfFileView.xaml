@@ -6,8 +6,7 @@
              xmlns:controls="clr-namespace:PdfFormFramework.Controls;assembly=PdfFormFramework"
              xmlns:models="clr-namespace:AwardQuick.Models"
              xmlns:helpers="clr-namespace:AwardQuick.FontHelpers"
-             x:DataType="viewModels:PdfViewModel"
-             x:Class="AwardQuick.Views.PdfView"
+             x:Class="AwardQuick.Views.PdfFileView"
              x:Name="PdfViewForm"
              BackgroundColor="{StaticResource PrimaryBackground}"
              NavigationPage.HasNavigationBar="False"
@@ -15,55 +14,52 @@
              Loaded="Page_Loaded"
              Title="PDF Pages">
 
+    <!-- Hide the Shell back button on this page -->
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <!-- Header -->
-        <!--   <Label Grid.Row="0"
-        Grid.Column="0"
-        TextColor="{DynamicResource PrimaryText}"
-        FontSize="24"
-        FontAttributes="Bold"
-        Margin="10"
-        HorizontalOptions="StartAndExpand"
-        VerticalOptions="Center"
-        HorizontalTextAlignment="Start"
-        Text="PDF Pages" />
 
-        <Button Grid.Row="0"
-        Grid.Column="1"
-        Clicked="OnBackClicked"
-        Text="Go Back"
-        HorizontalOptions="End"
-        TextColor="{DynamicResource PrimaryText}"
-        ContentLayout="Left,5">
-        <Button.ImageSource>
-        <FontImageSource
-        FontFamily="FontAwesomeSolid"
-        Glyph="{x:Static helpers:FontAwesomeSolidHelper.ArrowLeft}"
-        Color="Black" />
-        </Button.ImageSource>
-        </Button> -->
-
-        <!-- PDF Form View (row 1) -->
+        <!-- PDF Form View in a Border -->
         <Border Grid.Row="0"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
+                x:Name="PdfContainer"
                 BackgroundColor="White"
                 Stroke="Gray"
                 StrokeThickness="1"
                 Margin="5">
-            <controls:PdfInteractiveFormView
-                x:Name="FormView"
-                x:TypeArguments="models:PdfFormData"
-                HeightRequest="600"
-                BackgroundColor="White" />
+            <!-- Wrap content in a Grid so we can overlay a button -->
+            <Grid>
+                <!-- Main PDF control -->
+                <controls:PdfInteractiveFormView
+                    x:Name="FormView"
+                    x:TypeArguments="models:PdfFormData"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    HeightRequest="600"
+                    BackgroundColor="White" />
+
+                <!-- Overlay button in top-right of the Border -->
+                <Button
+                    Text="🠼 Back"
+                    Padding="10,6"
+                    Margin="8"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Clicked="OnPageBackClicked" />
+            </Grid>
         </Border>
 
         <!-- Buttons (row 2) -->

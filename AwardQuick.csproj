@@ -30,7 +30,7 @@
 		<ApplicationId>com.companyname.awardquick</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>3.008.0024</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>3.009.0025</ApplicationDisplayVersion>
 		<ApplicationVersion>3</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->
@@ -85,6 +85,9 @@
 	  <Compile Update="Views\LicenseAgreementViewViews.xaml.cs">
 	    <DependentUpon>LicenseAgreementViewLicenseAgreementViews.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\PdfFileView.xaml.cs">
+	    <DependentUpon>PdfFileView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\StatementCitationsView.xaml.cs">
 	    <DependentUpon>StatementCitationsView.xaml</DependentUpon>
 	  </Compile>
@@ -115,7 +118,7 @@
 	  <MauiXaml Update="Views\LettersMemosView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PdfView.xaml">
+	  <MauiXaml Update="Views\PdfFileView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ReferencesView.xaml">
