@@ -27,6 +27,8 @@ namespace AwardQuick
 
 /*
  * 
+ *  v 3.009.0026 Changed the back buttons to use the 🠼 arrow with a font size of 20 so it looks better and set the colors on the
+ *               PDF view to use the resource colors to keep it consistent. mdail 10-30-25
  *  v 3.009.0025 Finally got the PDF view to work and display the PDFs. one of them was the PDF that used the wrong kind of fields so 
  *               I had to print it to a Microsoft pdf file to flatten the fields. All the example forms now open and display correctly. mdail 10-30-25
  *  v 3.008.0024 Changed the name of the progress overlay to avoid naming confilct with the one in the framework mdail 10-29-25

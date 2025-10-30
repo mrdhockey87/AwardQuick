@@ -43,16 +43,11 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Clicked="OnBackClicked"
-                Text="Go Back"
+                Text="🠼 Back"
+                FontSize="20"
                 HorizontalOptions="End"
                 TextColor="{DynamicResource PrimaryText}"
                 ContentLayout="Left,5">
-                <Button.ImageSource>
-                    <FontImageSource
-                        FontFamily="FontAwesomeSolid"
-                        Glyph="{x:Static helpers:FontAwesomeSolidHelper.ArrowLeft}"
-                        Color="Black" />
-                </Button.ImageSource>
             </Button>
 
             <Grid

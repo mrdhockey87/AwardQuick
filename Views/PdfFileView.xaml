@@ -34,20 +34,22 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 x:Name="PdfContainer"
-                BackgroundColor="White"
-                Stroke="Gray"
+                BackgroundColor="{StaticResource PrimaryBackground}"
+                Stroke="{StaticResource Gray500}"
                 StrokeThickness="1"
-                Margin="5">
+                Margin="5,10,5,10">
             <!-- Wrap content in a Grid so we can overlay a button -->
             <Grid>
-                <!-- Main PDF control -->
+                <!-- Main PDF control The Height & Width might need to be set by platform as these
+                are what was required to get ride of the black border on windows -->
                 <controls:PdfInteractiveFormView
                     x:Name="FormView"
                     x:TypeArguments="models:PdfFormData"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
-                    HeightRequest="600"
-                    BackgroundColor="White" />
+                    WidthRequest="1400"
+                    HeightRequest="800"
+                    BackgroundColor="{StaticResource PrimaryBackground}" />
 
                 <!-- Overlay button in top-right of the Border -->
                 <Button
@@ -56,8 +58,8 @@
                     Margin="8"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
-                    BackgroundColor="LightGray"
-                    TextColor="Black"
+                    BackgroundColor="{StaticResource Gray400}"
+                    TextColor="{DynamicResource PrimaryText}"
                     Clicked="OnPageBackClicked" />
             </Grid>
         </Border>
@@ -73,13 +75,13 @@
             Direction="Row">
             <Button
                 Text="Email Form"
-                TextColor="Black"
-                BackgroundColor="LightGray"
+                TextColor="{DynamicResource PrimaryText}"
+                BackgroundColor="{StaticResource Gray400}"
                 Clicked="OnEmailClicked" />
             <Button
                 Text="Print"
-                TextColor="Black"
-                BackgroundColor="LightGray"
+                TextColor="{DynamicResource PrimaryText}"
+                BackgroundColor="{StaticResource Gray400}"
                 Clicked="OnPrintClicked" />
         </FlexLayout>
 

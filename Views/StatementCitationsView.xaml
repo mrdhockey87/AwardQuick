@@ -36,19 +36,15 @@
                    HorizontalTextAlignment="Start"
                    Text="Statements/Citations" />
 
-            <Button Grid.Row="0"
-                    Grid.Column="1"
-                    Clicked="OnBackClicked"
-                    Text="Go Back"
-                    TextColor="{DynamicResource PrimaryText}"
-                    ContentLayout="Left,5">
-                <Button.ImageSource>
-                    <FontImageSource
-                        FontFamily="FontAwesomeSolid"
-                        Glyph="{x:Static helpers:FontAwesomeSolidHelper.ArrowLeft}"
-                        Color="Black" />
-                </Button.ImageSource>
-            </Button>
+            <Button
+                Grid.Row="0"
+                Grid.Column="1"
+                Clicked="OnBackClicked"
+                Text="🠼 Back"
+                FontSize="20"
+                TextColor="{DynamicResource PrimaryText}"
+                ContentLayout="Left,5" />
+
 
             <!-- Main Tab View -->
             <syncfusion:SfTabView Grid.Row="1"
