@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
              xmlns:overlay="clr-namespace:AwardQuick.Overlays"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="AwardQuick.Views.FormsView"
              Title="Forms">
     <ContentPage.BindingContext>
-        <viewModels:FormsViewModel x:Name="fvm" />
+        <viewModels:FormsViewModel  x:Name="formsViewModel"/>
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -19,9 +22,59 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <overlay:ProgressOverlay x:Name="progressOverlay"
-                                        Grid.Row="1"
-                                        Grid.Column="0" />
+
+            <!-- Header -->
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                TextColor="{DynamicResource PrimaryText}"
+                FontSize="24"
+                FontAttributes="Bold"
+                Margin="10"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Start"
+                Text="Forms" />
+
+            <Button
+                Grid.Row="0"
+                Grid.Column="1"
+                Clicked="OnBackClicked"
+                Text="🠼 Back"
+                FontSize="20"
+                HorizontalOptions="End"
+                TextColor="{DynamicResource PrimaryText}"
+                ContentLayout="Left,5">
+            </Button>
+
+            <!-- Forms List -->
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,20,0,20"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                
+                <overlay:ProgressOverlay x:Name="progressOverlay"
+                                         Grid.Row="1"
+                                         Grid.Column="0" />
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

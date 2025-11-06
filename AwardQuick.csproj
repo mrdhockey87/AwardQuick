@@ -137,6 +137,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Data\" />
+	  <Folder Include="Resources\Raw\Forms\" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -26,7 +26,10 @@ namespace AwardQuick
 }
 
 /*
- * 
+ *  
+ *  v 3.009.0027 Start adding the Forms page to handle the DA Forms. Added 2 of the buttons and the back button. I need to do some 
+ *               work to get the PDF for the DAForm638 to work, and then make a page to get the data for the form. Then send it as the
+ *               model to the form viewer to fill the correct version of the form mdail 11-6-25
  *  v 3.009.0026 Changed the back buttons to use the 🠼 arrow with a font size of 20 so it looks better and set the colors on the
  *               PDF view to use the resource colors to keep it consistent. Tried to get ride of the outline in the framework. mdail 10-30-25
  *  v 3.009.0025 Finally got the PDF view to work and display the PDFs. one of them was the PDF that used the wrong kind of fields so 
