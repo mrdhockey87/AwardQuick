@@ -13,16 +13,16 @@ namespace AwardQuick.Services
         /// <param name="ex">Exception.</param>
         public async void HandleError(Exception ex)
         {
-            await DisplayAlert(ex);
+            await DisplayAlertAsync(ex);
         }
 
-        async Task DisplayAlert(Exception ex)
+        async Task DisplayAlertAsync(Exception ex)
         {
             try
             {
                 await _semaphore.WaitAsync();
                 if (Shell.Current is Shell shell)
-                    await shell.DisplayAlert("Error", ex.Message, "OK");
+                    await shell.DisplayAlertAsync("Error", ex.Message, "OK");
             }
             finally
             {

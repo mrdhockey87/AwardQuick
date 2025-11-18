@@ -30,7 +30,7 @@ namespace AwardQuick.ViewModels
         public ICommand S3OpsSGMCommand { get; }
         public ICommand CCVersion4Command { get; }
         public ICommand CSMCommand { get; }
-        private static ExamplesView ExView;
+        private static ExamplesView? ExView;
         public void SetView(ExamplesView exview) => ExView = exview;        
         public ExamplesViewModel() : this(ServiceHelper.GetService<IPdfService>()) { }
         public ExamplesViewModel(IPdfService pdfService)
@@ -84,7 +84,7 @@ namespace AwardQuick.ViewModels
                 if (string.IsNullOrWhiteSpace(packagedPath) || !File.Exists(packagedPath))
                 {
                     if (ExView != null)
-                        await ExView.DisplayAlert("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
+                        await ExView.DisplayAlertAsync("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
                     return;
                 }
 
@@ -96,7 +96,7 @@ namespace AwardQuick.ViewModels
             {
                 System.Diagnostics.Debug.WriteLine($"Navigation failed: {ex}");
                 if (ExView != null)
-                    await ExView.DisplayAlert("Navigation failed", ex.Message, "OK");
+                    await ExView.DisplayAlertAsync("Navigation failed", ex.Message, "OK");
             }
         }
     }

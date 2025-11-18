@@ -10,7 +10,7 @@ namespace AwardQuick.Views;
 public partial class PdfFileView : ContentPage
 {
     private bool _isLoading;
-    private PdfFormData PdfFormData = null;
+    private PdfFormData? PdfFormData = null;
     private string PdfPageName = Constants.PdfFileName;
     public PdfFileView()
     {
@@ -36,7 +36,7 @@ public partial class PdfFileView : ContentPage
         catch (Exception ex)
         {
             Debug.WriteLine($"OnAppearing load failed: {ex}");
-            await DisplayAlert("Error", ex.Message, "OK");
+            await DisplayAlertAsync("Error", ex.Message, "OK");
         }
         finally
         {
@@ -52,14 +52,14 @@ public partial class PdfFileView : ContentPage
             var pdfPath = FormView.CurrentPdfPath; // <- filled/view copy path
             if (string.IsNullOrEmpty(pdfPath) || !File.Exists(pdfPath))
             {
-                await DisplayAlert("Print", "No filled PDF available yet.", "OK");
+                await DisplayAlertAsync("Print", "No filled PDF available yet.", "OK");
                 return;
             }
             await PdfPrinterHelper.PrintOrEmailAsync(pdfPath);
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Print Error", ex.Message, "OK");
+            await DisplayAlertAsync("Print Error", ex.Message, "OK");
         }
     }
 
@@ -70,14 +70,14 @@ public partial class PdfFileView : ContentPage
         {
             if (string.IsNullOrEmpty(FormView.CurrentPdfPath) || !File.Exists(FormView.CurrentPdfPath))
             {
-                await DisplayAlert("Email", "No filled PDF available yet.", "OK");
+                await DisplayAlertAsync("Email", "No filled PDF available yet.", "OK");
                 return;
             }
             await PdfPrinterHelper.PromptAndEmailAsync(FormView.CurrentPdfPath);
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Email Error", ex.Message, "OK");
+            await DisplayAlertAsync("Email Error", ex.Message, "OK");
         }
     }
     //
@@ -93,7 +93,7 @@ public partial class PdfFileView : ContentPage
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", ex.Message, "OK");
+            await DisplayAlertAsync("Error", ex.Message, "OK");
         }
     }
 
@@ -128,7 +128,7 @@ public partial class PdfFileView : ContentPage
                     {
                         if (Navigation == null)
                         {
-                            await DisplayAlert("Error!", "No Navigation available to go back", "OK");
+                            await DisplayAlertAsync("Error!", "No Navigation available to go back", "OK");
                         }
                         else
                         {
@@ -140,7 +140,7 @@ public partial class PdfFileView : ContentPage
             catch (Exception ex)
             {
                 Debug.WriteLine($"NavigateBackSafeAsync failed: {ex}");
-                await DisplayAlert("Navigation Error", ex.Message, "OK");
+                await DisplayAlertAsync("Navigation Error", ex.Message, "OK");
             }
         });
     }
@@ -247,7 +247,7 @@ public partial class PdfFileView : ContentPage
         }
 
         if (error is not null)
-            await DisplayAlert("Error", $"Failed to load PDF: {error.Message}", "OK");
+            await DisplayAlertAsync("Error", $"Failed to load PDF: {error.Message}", "OK");
     }
 
     public async Task<string?> LocatePdfFileAsync(string fileName)

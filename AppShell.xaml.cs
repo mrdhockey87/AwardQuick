@@ -51,7 +51,7 @@ namespace AwardQuick
         {
             string msg = "While checking for updates, the program will close automatically.";
             string msg2 = "Click OK to close the program and check for updates.";
-            bool answer = await DisplayAlert("Update Notice", msg + Environment.NewLine + msg2, "OK", "Cancel");
+            bool answer = await DisplayAlertAsync("Update Notice", msg + Environment.NewLine + msg2, "OK", "Cancel");
             if (answer)
             {
                 // Close the app I still need to figure out how to run an external process to check for updates.
@@ -64,7 +64,7 @@ namespace AwardQuick
                 catch (Exception ex)
                 {
                     // Handle exceptions, for example, if no browser is installed
-                    await DisplayAlert("⚠️" + " Error", "Error running update application!", "OK");
+                    await DisplayAlertAsync("⚠️" + " Error", "Error running update application!", "OK");
                     ProgressService.Instance.HideProgress();
                     Console.WriteLine($"Error opening browser: {ex.Message}");
                 }
@@ -81,7 +81,7 @@ namespace AwardQuick
             catch (Exception ex)
             {
                 // Handle exceptions, for example, if no browser is installed
-                await DisplayAlert("⚠️" + " Error", "Error opening support page!", "OK");
+                await DisplayAlertAsync("⚠️" + " Error", "Error opening support page!", "OK");
                 ProgressService.Instance.HideProgress();
                 Console.WriteLine($"Error Support browser: {ex.Message}");
             }
@@ -103,9 +103,9 @@ namespace AwardQuick
             }
             catch (Exception ex)
             {
-                //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
+                //Show DisplayAlertAsync with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
                 //await OnMenuItemClicked("///About");
-                await DisplayAlert("⚠️" + " Error", "Error opening about page! Error = " + ex.Message, "OK");
+                await DisplayAlertAsync("⚠️" + " Error", "Error opening about page! Error = " + ex.Message, "OK");
                 ProgressService.Instance.HideProgress();
                 Console.WriteLine($"Error opening About: {ex.Message}");
             }
@@ -118,9 +118,9 @@ namespace AwardQuick
             }
             catch (Exception ex)
             {
-                //Show DisplayAlert with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
+                //Show DisplayAlertAsync with about information or show InforamtionOverlay page and add to overlyay directory mdail 9-3-2025
                 //await OnMenuItemClicked("///About");
-                await DisplayAlert("⚠️" + " Error", "Error opening about page!", "OK");
+                await DisplayAlertAsync("⚠️" + " Error", "Error opening about page!", "OK");
                 ProgressService.Instance.HideProgress();
                 Console.WriteLine($"Error opening About: {ex.Message}");
             }
@@ -137,7 +137,7 @@ namespace AwardQuick
             catch (Exception ex)
             {
                 // Handle exceptions, for example, if no browser is installed
-                await DisplayAlert("⚠️" + " Error", "Error opening default browser!", "OK");
+                await DisplayAlertAsync("⚠️" + " Error", "Error opening default browser!", "OK");
                 ProgressService.Instance.HideProgress();
                 Console.WriteLine($"Error opening browser: {ex.Message}");
             }

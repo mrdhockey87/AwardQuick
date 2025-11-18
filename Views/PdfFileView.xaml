@@ -21,55 +21,59 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />   <!-- header -->
+            <RowDefinition Height="*" />      <!-- main content -->
+            <RowDefinition Height="Auto" />   <!-- footer buttons -->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <!-- PDF Form View in a Border -->
-        <Border Grid.Row="0"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                x:Name="PdfContainer"
-                BackgroundColor="{StaticResource PrimaryBackground}"
-                Stroke="{StaticResource Gray500}"
-                StrokeThickness="1"
-                Margin="5,10,5,10">
-            <!-- Wrap content in a Grid so we can overlay a button -->
-            <Grid>
-                <!-- Main PDF control The Height & Width might need to be set by platform as these
-                are what was required to get ride of the black border on windows -->
-                <controls:PdfInteractiveFormView
-                    x:Name="FormView"
-                    x:TypeArguments="models:PdfFormData"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    WidthRequest="1400"
-                    HeightRequest="800"
-                    BackgroundColor="{StaticResource PrimaryBackground}" />
+        <!-- Header: Label on the left, Back button on the right -->
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               HorizontalOptions="Start"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Start"
+               Margin="18,10,0,10"
+               FontSize="22"
+               TextColor="{DynamicResource PrimaryText}"
+               Text="Examples" />
 
-                <!-- Overlay button in top-right of the Border -->
-                <Button
-                    Text="🠼 Back"
-                    Padding="10,6"
-                    Margin="8"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    BackgroundColor="{StaticResource Gray400}"
-                    TextColor="{DynamicResource PrimaryText}"
-                    Clicked="OnPageBackClicked" />
-            </Grid>
-        </Border>
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                Text="🠼 Back"
+                Padding="10,6"
+                Margin="8"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                BackgroundColor="{StaticResource Gray400}"
+                TextColor="{DynamicResource PrimaryText}"
+                Clicked="OnPageBackClicked" />
 
-        <!-- Buttons (row 2) -->
+        <!-- Main content: PDF Form View in a Border -->
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Border x:Name="PdfContainer"
+                    BackgroundColor="{StaticResource PrimaryBackground}"
+                    Stroke="{StaticResource Gray500}"
+                    StrokeThickness="0"
+                    Margin="-13,-5,-13,-10">
+                <controls:PdfInteractiveFormView x:Name="FormView"
+                                                 x:TypeArguments="models:PdfFormData"
+                                                 HorizontalOptions="FillAndExpand"
+                                                 VerticalOptions="FillAndExpand"
+                                                 BackgroundColor="{StaticResource PrimaryBackground}" />
+            </Border>
+        </Grid>
+
+        <!-- Buttons (footer row) -->
         <FlexLayout
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Padding="10"
+            IsVisible="False"
             HorizontalOptions="Fill"
             JustifyContent="SpaceEvenly"
             Direction="Row">
@@ -85,10 +89,9 @@
                 Clicked="OnPrintClicked" />
         </FlexLayout>
 
-        <!-- Progress overlay on top -->
+        <!-- Progress overlay spanning entire page -->
         <overlay:ProgressOverlay x:Name="progressOverlay"
-                                 Grid.Row="0"
-                                 Grid.Column="0"
-                                 Grid.ColumnSpan="2" />
+                                 Grid.Row="0" Grid.RowSpan="3"
+                                 Grid.Column="0" Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>

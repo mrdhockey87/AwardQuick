@@ -27,6 +27,8 @@ namespace AwardQuick
 
 /*
  *  
+ *  v 4.010.0029 Adjust the position and border of the pdf form view to make it look better in the page. mdail 11-18-25
+ *  v 4.010.0028 Upgrade for .Net 10 & MAUI 14.0, also updated the libraryies to the latest version that supports .Net 10. mdail 11-18-25
  *  v 3.009.0027 Start adding the Forms page to handle the DA Forms. Added 2 of the buttons and the back button. I need to do some 
  *               work to get the PDF for the DAForm638 to work, and then make a page to get the data for the form. Then send it as the
  *               model to the form viewer to fill the correct version of the form mdail 11-6-25

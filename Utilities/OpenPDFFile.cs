@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Maui;
 
 namespace AwardQuick.Utilities
 {
@@ -29,7 +30,7 @@ namespace AwardQuick.Utilities
                 // Always marshal to UI thread
                 await MainThread.InvokeOnMainThreadAsync(async () =>
                 {
-                        await Shell.Current.CurrentPage.DisplayAlert(title, message, cancel);
+                        await Shell.Current.CurrentPage.DisplayAlertAsync(title, message, cancel);
                 });
             }
             catch (Exception ex)

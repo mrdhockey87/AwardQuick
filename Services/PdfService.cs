@@ -9,7 +9,7 @@ namespace AwardQuick.Services
 {
     public class PdfService : IPdfService
     {
-        private string _lastTempFile;
+        private string? _lastTempFile;
 
         public async Task OpenPdfFromAssetsAsync(string gzipFileName)
         {

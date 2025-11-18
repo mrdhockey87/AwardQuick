@@ -11,7 +11,7 @@ namespace AwardQuick.ViewModels
 {
     public partial class FormsViewModel : ObservableObject
     {
-        private static FormsView FrView;
+        private static FormsView? FrView;
 
         public void SetView(FormsView frview) => FrView = frview;
 
@@ -39,7 +39,7 @@ namespace AwardQuick.ViewModels
                 if (string.IsNullOrWhiteSpace(packagedPath) || !File.Exists(packagedPath))
                 {
                     if (FrView != null)
-                        await FrView.DisplayAlert("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
+                        await FrView.DisplayAlertAsync("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
                     return;
                 }
 
@@ -51,9 +51,8 @@ namespace AwardQuick.ViewModels
             {
                 System.Diagnostics.Debug.WriteLine($"Navigation failed: {ex}");
                 if (FrView != null)
-                    await FrView.DisplayAlert("Navigation failed", ex.Message, "OK");
+                    await FrView.DisplayAlertAsync("Navigation failed", ex.Message, "OK");
             }
         }
     }
-}
 }
