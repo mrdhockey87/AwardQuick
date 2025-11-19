@@ -48,32 +48,93 @@
             </Button>
 
             <!-- Forms List -->
-            <Grid
-                Grid.Row="1"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
-                Margin="0,20,0,20"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill">
+            <Grid Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  Margin="0,20,0,20"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Fill">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                
-                <overlay:ProgressOverlay x:Name="progressOverlay"
-                                         Grid.Row="1"
-                                         Grid.Column="0" />
+                <Button Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        ImageSource="pdficon.png"
+                        Margin="20,20,20,20"
+                        HeightRequest="150"
+                        WidthRequest="450"
+                        BackgroundColor="{DynamicResource Gray300}"
+                        Command="{Binding DAForm638Command}"
+                        TextColor="{DynamicResource PrimaryText}"
+                        Text="DA FORM 638 - Recommendation for Award" />
+
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        ImageSource="pdficon.png"
+                        Margin="20,20,20,20"
+                        HeightRequest="150"
+                        WidthRequest="450"
+                        BackgroundColor="{DynamicResource Gray300}"
+                        Command="{Binding DAForm4187Command}"
+                        TextColor="{DynamicResource PrimaryText}"
+                        Text="DA FORM 4187 - Personnel Action" />
+
+                <Button Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        ImageSource="pdficon.png"
+                        Margin="20,20,20,20"
+                        HeightRequest="150"
+                        WidthRequest="450"
+                        BackgroundColor="{DynamicResource Gray300}"
+                        Command="{Binding DAForm7594Command}"
+                        TextColor="{DynamicResource PrimaryText}"
+                        Text="DA FORM 7594 - Unit Award Recommendation" />
+
+                <Button Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        ImageSource="pdficon.png"
+                        Margin="20,20,20,20"
+                        HeightRequest="150"
+                        WidthRequest="450"
+                        BackgroundColor="{DynamicResource Gray300}"
+                        Command="{Binding CitationPageCommand}"
+                        TextColor="{DynamicResource PrimaryText}"
+                        Text="CitationPage" />
+
+
+                <Button Grid.Row="2"
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        ImageSource="pdficon.png"
+                        Margin="20,20,20,20"
+                        HeightRequest="150"
+                        WidthRequest="450"
+                        BackgroundColor="{DynamicResource Gray300}"
+                        Command="{Binding NarrativePageCommand}"
+                        TextColor="{DynamicResource PrimaryText}"
+                        Text="Narrative Page" />
+
+                <overlay:ProgressOverlay
+                    x:Name="progressOverlay"
+                    Grid.Row="1"
+                    Grid.Column="0" />
+
             </Grid>
         </Grid>
     </ContentPage.Content>

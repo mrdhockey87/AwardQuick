@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="400mm"
-   height="200mm"
-   viewBox="0 0 400 200"
+   width="100.811"
+   height="50.905998"
+   viewBox="0 0 26.672929 13.468879"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="pdf_icon.svg"
+   sodipodi:docname="pdficon.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +24,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.51339147"
-     inkscape:cx="904.76767"
-     inkscape:cy="739.202"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:cx="-24.347892"
+     inkscape:cy="92.521989"
+     inkscape:window-width="1147"
+     inkscape:window-height="755"
+     inkscape:window-x="2482"
+     inkscape:window-y="42"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
      id="defs1" />
@@ -39,35 +39,35 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#fb0000;fill-opacity:1;stroke-width:7.94801"
+       style="fill:#fb0000;fill-opacity:1;stroke-width:0.548481"
        id="rect1"
-       width="400.74823"
-       height="200.42944"
+       width="26.594173"
+       height="14.383147"
        x="0"
        y="0" />
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:210.758px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#373737;fill-opacity:0.2;stroke-width:275.843"
-       x="2.5883007"
-       y="175.38011"
+       style="font-weight:bold;font-size:14.5441px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#373737;fill-opacity:0.2;stroke-width:19.0356"
+       x="0.17861518"
+       y="12.102747"
        id="text1-8"
-       transform="scale(0.96230165,1.0391752)"><tspan
+       transform="scale(0.92538507,1.0806312)"><tspan
          sodipodi:role="line"
          id="tspan1-8"
-         style="fill:#373737;fill-opacity:0.2;stroke-width:275.843"
-         x="2.5883007"
-         y="175.38011">PDF</tspan></text>
+         style="fill:#373737;fill-opacity:0.2;stroke-width:19.0356"
+         x="0.17861518"
+         y="12.102747">PDF</tspan></text>
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:210.758px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:275.843"
-       x="-4.6570311"
-       y="170.1058"
+       style="font-weight:bold;font-size:14.5441px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:19.0356"
+       x="-0.32137546"
+       y="11.738772"
        id="text1"
-       transform="scale(0.96230161,1.0391752)"><tspan
+       transform="scale(0.92538499,1.0806313)"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:275.843"
-         x="-4.6570311"
-         y="170.1058">PDF</tspan></text>
+         style="fill:#ffffff;fill-opacity:1;stroke-width:19.0356"
+         x="-0.32137546"
+         y="11.738772">PDF</tspan></text>
   </g>
 </svg>

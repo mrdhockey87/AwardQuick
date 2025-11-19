@@ -27,6 +27,11 @@ namespace AwardQuick
 
 /*
  *  
+ *  v 4.010.0030 Added the first version of the Forms page to handle the DA Forms. Added 5 of the buttons and the back button.
+ *               It decompresses the PDF and then opens it with the default PDF viewer on the system. When the page closes it
+ *               cleans up any forms left in the documents folder (I need to check and make sure it does this part). I had to resize the
+ *               PDF ico as it was much too large. I renamed the files in the Statements as It occured to me the Andorid 
+ *               can't handle - in the names. mdail 11-18-25
  *  v 4.010.0029 Adjust the position and border of the pdf form view to make it look better in the page. mdail 11-18-25
  *  v 4.010.0028 Upgrade for .Net 10 & MAUI 14.0, also updated the libraryies to the latest version that supports .Net 10. mdail 11-18-25
  *  v 3.009.0027 Start adding the Forms page to handle the DA Forms. Added 2 of the buttons and the back button. I need to do some 
