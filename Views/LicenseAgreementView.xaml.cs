@@ -1,22 +1,24 @@
+using AwardQuick.Overlays;
+using AwardQuick.Utilities;
+
 namespace AwardQuick.Pages
 {
     public partial class LicenseAgreementView : ContentPage
     {
+        public ProgressOverlay ProgressOverlay { get; private set; }
+        private LicenseAgreementViewModel ViewModel => (LicenseAgreementViewModel)BindingContext;
         public LicenseAgreementView()
         {
             InitializeComponent();
-            // Subscribe to property changes
-            /*
-            if (BindingContext is LicenseAgreementViewModel viewModel)
-            {
-                viewModel.PropertyChanged += (s, e) =>
-                {
-                    if (e.PropertyName == nameof(LicenseAgreementViewModel.LicenseHtml))
-                    {
-                        System.Diagnostics.Debug.WriteLine("LicenseHtml property changed in UI");
-                    }
-                };
-           */
+            ProgressOverlay = progressOverlay;
+            ViewModel.SetView(this);
+        }
+        // Also attempt cleanup when the page disappears (covers other close scenarios)
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            // Fire-and-forget cleanup so UI navigation isn't blocked
+            _ = Task.Run(async () => await DeleteAppDocumentFilesUtl.DeleteAllFilesInAppDocumentsFolderAsync());
         }
     }
 }

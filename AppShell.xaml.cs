@@ -27,6 +27,7 @@ namespace AwardQuick
             Routing.RegisterRoute("Examples", typeof(ExamplesView));
             Routing.RegisterRoute("Forms", typeof(FormsView));
             Routing.RegisterRoute("LettersMemos", typeof(LettersMemosView));
+            Routing.RegisterRoute("Reasons", typeof(ReasonsLoLView));
             Routing.RegisterRoute("License", typeof(LicenseAgreementView));
             Routing.RegisterRoute("References", typeof(ReferencesView));
             Routing.RegisterRoute("StatementCitations", typeof(StatementCitationsView));

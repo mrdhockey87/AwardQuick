@@ -168,6 +168,7 @@ public partial class StatementCitationsView : ContentPage
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
+        await DeleteAppDocumentFilesUtl.DeleteAllFilesInAppDocumentsFolderAsync();
         await Shell.Current.GoToAsync("///MainPage");
     }
 
@@ -187,5 +188,12 @@ public partial class StatementCitationsView : ContentPage
 
         // Handle UI-specific logic
         MoveWebViewToCurrentTab();
+    }
+    // Also attempt cleanup when the page disappears (covers other close scenarios)
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        // Fire-and-forget cleanup so UI navigation isn't blocked
+        _ = Task.Run(async () => await DeleteAppDocumentFilesUtl.DeleteAllFilesInAppDocumentsFolderAsync());
     }
 }

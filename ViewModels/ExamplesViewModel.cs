@@ -77,6 +77,10 @@ namespace AwardQuick.ViewModels
         {
             try
             {
+                if (ExView != null)
+                {
+                    await ExView.ProgressOverlay.ShowAsync();
+                }
                 var packagedPath = gzipFileName.Contains('/') ? gzipFileName : $"Examples\\{gzipFileName}";
 
                 // Materialize to a local .pdf and capture the path
@@ -84,19 +88,28 @@ namespace AwardQuick.ViewModels
                 if (string.IsNullOrWhiteSpace(packagedPath) || !File.Exists(packagedPath))
                 {
                     if (ExView != null)
+                    {
+                        await ExView.ProgressOverlay.Hide();
                         await ExView.DisplayAlertAsync("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
+                    }
                     return;
                 }
 
                 Constants.PdfFileName = packagedPath;
                 await MainThread.InvokeOnMainThreadAsync(async () => await Shell.Current.GoToAsync("PdfViewer"));
-                //await Shell.Current.GoToAsync("PdfViewer");
+                if (ExView != null)
+                {
+                    await ExView.ProgressOverlay.Hide();
+                }
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Navigation failed: {ex}");
                 if (ExView != null)
+                {
+                    await ExView.ProgressOverlay.Hide();
                     await ExView.DisplayAlertAsync("Navigation failed", ex.Message, "OK");
+                }
             }
         }
     }

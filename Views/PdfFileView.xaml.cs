@@ -1,9 +1,12 @@
+using System.Diagnostics;
+
 using AwardQuick.Models;
 using AwardQuick.Overlays;
+using AwardQuick.Utilities;
+
 using PdfFormFramework.Controls;
 using PdfFormFramework.Printing;
 using PdfFormFramework.Services;
-using System.Diagnostics;
 
 namespace AwardQuick.Views;
 
@@ -290,5 +293,13 @@ public partial class PdfFileView : ContentPage
         }
 
         return null;
+    }
+
+    // Also attempt cleanup when the page disappears (covers other close scenarios)
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        // Fire-and-forget cleanup so UI navigation isn't blocked
+        _ = Task.Run(async () => await DeleteAppDocumentFilesUtl.DeleteAllFilesInAppDocumentsFolderAsync());
     }
 }

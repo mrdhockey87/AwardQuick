@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
              xmlns:overlay="clr-namespace:AwardQuick.Overlays"
+             xmlns:controls="clr-namespace:AwardQuick.CustomControl"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{StaticResource Gray300}"
              x:Class="AwardQuick.Views.LettersMemosView"
              Title="Letters and Memos">
     <ContentPage.BindingContext>
@@ -19,9 +23,147 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <overlay:ProgressOverlay x:Name="progressOverlay"
-                                        Grid.Row="1"
-                                        Grid.Column="0" />
+            <!-- Header -->
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   TextColor="{DynamicResource PrimaryText}"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   Margin="10"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   Text="Letters &amp; Memos" />
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Clicked="OnBackClicked"
+                    Text="🠼 Back"
+                    FontSize="20"
+                    HorizontalOptions="End"
+                    TextColor="{DynamicResource PrimaryText}"
+                    ContentLayout="Left,5" />
+            <!-- Forms List -->
+            <Grid Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  Margin="0,20,0,20"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <controls:ImageLabelButtonControl Grid.Row="0"
+                                                  Grid.Column="0"
+                                                  HorizontalOptions="Center"
+                                                  VerticalOptions="Fill"
+                                                  Text="Letter of Latness"
+                                                  HeightRequest="100"
+                                                  WidthRequest="450"
+                                                  Command="{Binding OpenLoLCommand}"
+                                                  ImageSource="wordicon.png"
+                                                  ImageAspect="AspectFit"
+                                                  LabelMargin="10,0,0,0"
+                                                  BackgroundColor="{DynamicResource Secondary}"
+                                                  TextSize="18"
+                                                  NormalBackgroundColor="{DynamicResource PrimaryBackground}"
+                                                  NormalTextColor="{DynamicResource PrimaryText}"
+                                                  HoverBackgroundColor="{DynamicResource AppButtonFocusBackground}"
+                                                  HoverTextColor="{DynamicResource PrimaryText}"
+                                                  PressedBackgroundColor="{DynamicResource Grey400}"
+                                                  PressedTextColor="{DynamicResource PrimaryBackground}"
+                                                  DisabledBackgroundColor="{DynamicResource Gray600}"
+                                                  DisabledTextColor="{DynamicResource Gray900}" />
+
+                <controls:ImageLabelButtonControl Grid.Row="1"
+                                                  Grid.Column="0"
+                                                  HorizontalOptions="Center"
+                                                  VerticalOptions="Fill"
+                                                  Text="Amendment of Orders"
+                                                  HeightRequest="100"
+                                                  WidthRequest="450"
+                                                  Command="{Binding OpenAoOCommand}"
+                                                  ImageSource="wordicon.png"
+                                                  ImageAspect="AspectFit"
+                                                  LabelMargin="10,0,0,0"
+                                                  BackgroundColor="{DynamicResource Secondary}"
+                                                  TextSize="18"
+                                                  NormalBackgroundColor="{DynamicResource PrimaryBackground}"
+                                                  NormalTextColor="{DynamicResource PrimaryText}"
+                                                  HoverBackgroundColor="{DynamicResource AppButtonFocusBackground}"
+                                                  HoverTextColor="{DynamicResource PrimaryText}"
+                                                  PressedBackgroundColor="{DynamicResource Grey400}"
+                                                  PressedTextColor="{DynamicResource PrimaryBackground}"
+                                                  DisabledBackgroundColor="{DynamicResource Gray600}"
+                                                  DisabledTextColor="{DynamicResource Gray900}" />
+
+                <controls:ImageLabelButtonControl Grid.Row="2"
+                                                  Grid.Column="0"
+                                                  HorizontalOptions="Center"
+                                                  VerticalOptions="Fill"
+                                                  Text="Revocation of Orders"
+                                                  HeightRequest="100"
+                                                  WidthRequest="450"
+                                                  Command="{Binding OpenRoOCommand}"
+                                                  ImageSource="wordicon.png"
+                                                  ImageAspect="AspectFit"
+                                                  LabelMargin="10,0,0,0"
+                                                  BackgroundColor="{DynamicResource Secondary}"
+                                                  TextSize="18"
+                                                  NormalBackgroundColor="{DynamicResource PrimaryBackground}"
+                                                  NormalTextColor="{DynamicResource PrimaryText}"
+                                                  HoverBackgroundColor="{DynamicResource AppButtonFocusBackground}"
+                                                  HoverTextColor="{DynamicResource PrimaryText}"
+                                                  PressedBackgroundColor="{DynamicResource Grey400}"
+                                                  PressedTextColor="{DynamicResource PrimaryBackground}"
+                                                  DisabledBackgroundColor="{DynamicResource Gray600}"
+                                                  DisabledTextColor="{DynamicResource Gray900}" />
+
+                <controls:ImageLabelButtonControl Grid.Row="3"
+                                                  Grid.Column="0"
+                                                  HorizontalOptions="Center"
+                                                  VerticalOptions="Fill"
+                                                  Text="Blank Memirandom"
+                                                  HeightRequest="100"
+                                                  WidthRequest="450"
+                                                  Command="{Binding OpenMemoCommand}"
+                                                  ImageSource="wordicon.png"
+                                                  ImageAspect="AspectFit"
+                                                  LabelMargin="10,0,0,0"
+                                                  BackgroundColor="{DynamicResource Secondary}"
+                                                  TextSize="18"
+                                                  NormalBackgroundColor="{DynamicResource PrimaryBackground}"
+                                                  NormalTextColor="{DynamicResource PrimaryText}"
+                                                  HoverBackgroundColor="{DynamicResource AppButtonFocusBackground}"
+                                                  HoverTextColor="{DynamicResource PrimaryText}"
+                                                  PressedBackgroundColor="{DynamicResource Grey400}"
+                                                  PressedTextColor="{DynamicResource PrimaryBackground}"
+                                                  DisabledBackgroundColor="{DynamicResource Gray600}"
+                                                  DisabledTextColor="{DynamicResource Gray900}" />
+
+                <Button Command="{Binding ViewReasonsLoL}"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="End"
+                        FontSize="18"
+                        TextColor="{DynamicResource HomePageText}"
+                        Style="{StaticResource VersionButtonStyle}"
+                        Text="*View Reasons for Letters of Lateness" />
+
+
+                <overlay:ProgressOverlay x:Name="progressOverlay"
+                                         Grid.Row="1"
+                                         Grid.Column="0" />
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

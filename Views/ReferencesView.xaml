@@ -20,8 +20,8 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <overlay:ProgressOverlay x:Name="progressOverlay"
-                                        Grid.Row="1"
-                                        Grid.Column="0" />
+                                     Grid.Row="1"
+                                     Grid.Column="0" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -15,6 +15,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
+
         <Grid BackgroundColor="{StaticResource PrimaryBackground}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*" />
@@ -26,12 +27,14 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
             <Image Grid.Column="0"
                    Grid.Row="0"
                    HeightRequest="20"
                    Source="blank_space.png"
                    VerticalOptions="Start"
                    Aspect="AspectFit" />
+
             <Image Grid.Column="0"
                    Grid.Row="1"
                    HeightRequest="250"
@@ -39,6 +42,7 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    Aspect="AspectFit" />
+
             <Image Grid.Column="0"
                    Grid.Row="2"
                    HeightRequest="250"
@@ -46,6 +50,7 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    Aspect="AspectFit" />
+
             <Label Grid.Column="0"
                    Grid.Row="3"
                    Text="Use the Menu to the left to get started..."
@@ -55,6 +60,7 @@
                    VerticalOptions="End"
                    Margin="0,0,0,10"
                    FontSize="30" />
+
             <Grid Grid.Column="0"
                   Grid.Row="4"
                   VerticalOptions="End">
@@ -66,11 +72,12 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
+
                 <Image Grid.Column="0"
                        Grid.Row="0"
-                       WidthRequest="{Binding Source={x:Reference VersionLabel}, Path=Width}"
                        HorizontalOptions="Start"
                        Aspect="AspectFit" />
+
                 <Button Grid.Column="1"
                         Grid.Row="0"
                         Text="View License Agreement"
@@ -79,8 +86,8 @@
                         Padding="0"
                         Margin="0,0,20,0"
                         Style="{StaticResource VersionButtonStyle}"
-                        Clicked="OnLicenseAgreementClicked">
-                </Button>
+                        Clicked="OnLicenseAgreementClicked" />
+
                 <Label Grid.Column="2"
                        Grid.Row="0"
                        x:Name="VersionLabel"
@@ -92,8 +99,8 @@
                        FontSize="10" />
             </Grid>
             <overlay:ProgressOverlay x:Name="progressOverlay"
-                                        Grid.Row="1"
-                                        Grid.Column="0" />
+                                     Grid.Row="1"
+                                     Grid.Column="0" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

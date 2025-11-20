@@ -3,21 +3,13 @@ using AwardQuick.Utilities;
 
 namespace AwardQuick.Views;
 
-public partial class ExamplesView : ContentPage
+public partial class ReasonsLoLView : ContentPage
 {
-    private ExamplesViewModel ViewModel => (ExamplesViewModel)BindingContext;
     public ProgressOverlay ProgressOverlay { get; private set; }
-    public ExamplesView()
+    public ReasonsLoLView()
 	{
 		InitializeComponent();
         ProgressOverlay = progressOverlay;
-        ViewModel.SetView(this);
-    }
-
-    private async void OnBackClicked(object sender, EventArgs e)
-    {
-        await DeleteAppDocumentFilesUtl.DeleteAllFilesInAppDocumentsFolderAsync();
-        await Shell.Current.GoToAsync("///MainPage");
     }
     // Also attempt cleanup when the page disappears (covers other close scenarios)
     protected override void OnDisappearing()

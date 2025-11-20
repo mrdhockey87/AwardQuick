@@ -53,7 +53,7 @@
                     <VisualState Name="Normal">
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor" Value="{StaticResource TransparentColor}" />
-                            <Setter Property="TextColor" Value="{StaticResource AppButtonText}" />
+                            <Setter Property="TextColor" Value="{StaticResource HomePageText}" />
                         </VisualState.Setters>
                     </VisualState>
                     <VisualState Name="Pressed">

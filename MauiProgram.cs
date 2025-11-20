@@ -43,6 +43,8 @@ namespace AwardQuick
             builder.Services.AddSingleton<FormsView>();
             builder.Services.AddSingleton<LettersMemosViewModel>();
             builder.Services.AddSingleton<LettersMemosView>();
+            builder.Services.AddSingleton<ReasonsLoLViewModel>();
+            builder.Services.AddSingleton<ReasonsLoLView>();
             builder.Services.AddSingleton<LicenseAgreementViewModel>();
             builder.Services.AddSingleton<LicenseAgreementView>();
             builder.Services.AddSingleton<MainPageViewModel>();

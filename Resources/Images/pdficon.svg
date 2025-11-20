@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="100.811"
-   height="50.905998"
-   viewBox="0 0 26.672929 13.468879"
+   width="154"
+   height="148"
+   viewBox="0 0 40.745859 39.158334"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
@@ -23,51 +23,75 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.51339147"
-     inkscape:cx="-24.347892"
-     inkscape:cy="92.521989"
-     inkscape:window-width="1147"
-     inkscape:window-height="755"
-     inkscape:window-x="2482"
-     inkscape:window-y="42"
+     inkscape:zoom="2"
+     inkscape:cx="106.5"
+     inkscape:cy="88.75"
+     inkscape:window-width="1904"
+     inkscape:window-height="1001"
+     inkscape:window-x="59"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs1" />
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath39">
+      <path
+         id="path40"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264583"
+         d="M 17.808215,0.11575521 V 39.210009 H 47.862712 V 7.5762816 c -0.054,0.010065 -0.117755,-0.014102 -0.168981,-0.081132 -0.07391,7.144e-4 -0.147902,-0.065021 -0.162264,-0.1984375 -0.0549,-0.019772 -0.107397,-0.078096 -0.135395,-0.1839682 -0.03113,-0.1177332 -0.05108,-0.2386073 -0.07131,-0.3586342 -0.02786,-0.1612879 -0.03999,-0.324072 -0.04909,-0.4873088 -0.01109,-0.1407885 -0.0046,-0.2820326 0.0036,-0.4227132 0.0067,-0.100852 0.0094,-0.2017887 0.01138,-0.3028241 0.0019,-0.1089599 0.0026,-0.2176211 0.0031,-0.326595 2.62e-4,-0.094265 5.3e-4,-0.1889218 5.3e-4,-0.2831867 6.8e-5,-0.099516 -1.1e-5,-0.1986571 0,-0.298173 -5.3e-4,-0.1081265 0.01132,-0.2162503 0.01913,-0.3240114 0.0062,-0.084059 0.0092,-0.16793 0.01085,-0.252181 0.0019,-0.1320514 0.0021,-0.2642968 0.0026,-0.396358 2.62e-4,-0.1399381 5.29e-4,-0.2796746 5.29e-4,-0.4196128 4.8e-5,-0.1514284 -8e-6,-0.3028074 0,-0.4542358 5e-6,-0.1187035 0,-0.237864 0,-0.3565674 -0.0016,-0.147128 2.65e-4,-0.2938309 0.0072,-0.4408 0.0096,-0.1660159 0.01532,-0.3319223 0.01913,-0.4981608 0.0083,-0.1718929 0.019,-0.3438445 0.02739,-0.51573076 0.0048,-0.11777022 0.0082,-0.23543911 0.01757,-0.35295004 0.0011,-0.0145545 0.0033,-0.0288928 0.0047,-0.0434082 -0.05302,0.004389 -0.106008,0.009259 -0.159162,0.0118856 -0.161812,0.0125336 -0.323501,0.0275167 -0.485759,0.0335897 -0.210352,0.0106445 -0.420627,0.0121626 -0.630971,0.0227375 -0.122817,0.008607 -0.246486,0.0174752 -0.365868,0.0496094 -0.142518,0.0261189 -0.285737,0.0475657 -0.430464,0.0573609 -0.272246,0.0177972 -0.544208,0.0407921 -0.817004,0.0480591 -0.276072,0.004598 -0.551932,0.0109855 -0.827858,0.0211873 -0.227335,0.00496 -0.45475,0.002217 -0.68213,0.002066 C 42.807127,0.82493095 42.609997,0.8236662 42.412988,0.8195872 42.284223,0.8160842 42.155305,0.8103222 42.026966,0.7989166 41.865544,0.7882248 41.703915,0.7897456 41.542241,0.7854808 41.360147,0.7794918 41.178437,0.7694534 40.997054,0.7518911 40.765843,0.7298751 40.535671,0.7006763 40.305105,0.6728262 40.129435,0.6548364 39.953286,0.6293703 39.776457,0.6283845 39.630489,0.62756958 39.549905,0.5616359 39.534094,0.48885814 c -0.03355,0.002066 -0.06729,-9.181e-4 -0.10077,0.002585 -0.22044,0.0230613 -0.308676,-0.11715533 -0.24443,-0.22220867 -0.07111,-0.0345617 -0.100785,-0.0955535 -0.09095,-0.15347899 z" />
+    </clipPath>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#fb0000;fill-opacity:1;stroke-width:0.548481"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.354614;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        id="rect1"
-       width="26.594173"
-       height="14.383147"
-       x="0"
-       y="0" />
+       width="29.699997"
+       height="38.739735"
+       x="17.985491"
+       y="0.29304591"
+       ry="0"
+       inkscape:transform-center-x="-1.785938"
+       clip-path="url(#clipPath39)"
+       transform="translate(-7.4083333)" />
+    <rect
+       style="fill:#fb0000;fill-opacity:1;stroke-width:0.365916"
+       id="rect1-8"
+       width="21.042498"
+       height="8.0906458"
+       x="0.1322927"
+       y="7.0776033" />
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:14.5441px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#373737;fill-opacity:0.2;stroke-width:19.0356"
-       x="0.17861518"
-       y="12.102747"
+       style="font-weight:bold;font-size:9.70304px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#373737;fill-opacity:0.2;stroke-width:12.6995"
+       x="0.23969589"
+       y="15.842109"
        id="text1-8"
-       transform="scale(0.92538507,1.0806312)"><tspan
+       transform="scale(1.097522,0.91114346)"><tspan
          sodipodi:role="line"
          id="tspan1-8"
-         style="fill:#373737;fill-opacity:0.2;stroke-width:19.0356"
-         x="0.17861518"
-         y="12.102747">PDF</tspan></text>
+         style="fill:#373737;fill-opacity:0.2;stroke-width:12.6995"
+         x="0.23969589"
+         y="15.842109">PDF</tspan></text>
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:14.5441px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:19.0356"
-       x="-0.32137546"
-       y="11.738772"
+       style="font-weight:bold;font-size:9.70304px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke-width:12.6995"
+       x="-0.093869001"
+       y="15.599284"
        id="text1"
-       transform="scale(0.92538499,1.0806313)"><tspan
+       transform="scale(1.0975219,0.91114354)"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="fill:#ffffff;fill-opacity:1;stroke-width:19.0356"
-         x="-0.32137546"
-         y="11.738772">PDF</tspan></text>
+         style="fill:#ffffff;fill-opacity:1;stroke-width:12.6995"
+         x="-0.093869001"
+         y="15.599284">PDF</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.36539;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 40.084375,7.5075521 31.485417,7.4414061 V 0.29765625 Z"
+       id="path1" />
   </g>
 </svg>

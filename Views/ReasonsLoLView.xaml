@@ -2,19 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:overlay="clr-namespace:AwardQuick.Overlays"
-             x:DataType="viewModels:LicenseAgreementViewModel"
-             x:Class="AwardQuick.Pages.LicenseAgreementView"
-             x:Name="MetaPage"
-             Title="License Agreement">
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AwardQuick.Views.ReasonsLoLView"
+             Title="Reasons for Letters of Lateness">
 
     <ContentPage.BindingContext>
-        <viewModels:LicenseAgreementViewModel x:Name="LicenseAgreementViewModel" />
+        <viewModels:ReasonsLoLViewModel /> <!-- x:Name="ReasonsLoLViewModel" -->
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid HorizontalOptions="Fill"
-              BackgroundColor="{StaticResource PrimaryBackground}" >
+              BackgroundColor="{StaticResource PrimaryBackground}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -25,14 +23,14 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0"
                    Grid.Column="0"
-                   Text="LICENSE AGREEMENT"
+                   Text="Reasons for Letters of Lateness"
                    HorizontalOptions="Center"
                    HorizontalTextAlignment="Start"
                    TextDecorations="Underline"
                    TextColor="{StaticResource AppButtonText}"
                    BackgroundColor="{StaticResource PrimaryBackground}"
                    FontAttributes="Bold"
-                   FontSize="Large"/>
+                   FontSize="Large" />
             <Button Grid.Row="0"
                     Grid.Column="1"
                     HeightRequest="30"
@@ -42,16 +40,15 @@
                     Command="{Binding BackClickCommand}"
                     Style="{StaticResource WhiteBackButtonStyle}"
                     Text="Back" />
-
             <WebView Grid.Row="1"
                      Grid.Column="0"
                      Grid.ColumnSpan="2"
                      HorizontalOptions="Fill">
                 <WebView.Source>
-                    <HtmlWebViewSource Html="{Binding LicenseHtml}" />
+                    <HtmlWebViewSource Html="{Binding ReasonsHtml}" />
                 </WebView.Source>
             </WebView>
-
+            
             <overlay:ProgressOverlay x:Name="progressOverlay"
                                      Grid.Row="1"
                                      Grid.Column="0" />

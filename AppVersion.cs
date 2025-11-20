@@ -27,6 +27,8 @@ namespace AwardQuick
 
 /*
  *  
+ *  v 4.011.0031 Finished the Letters & Memos page. Added all 4 buttons to open the Word documents and the View Reasons button to 
+ *               open the Reasons page with the webview for the html, add the progress overlay to show progress when loading mdail 11/20/25
  *  v 4.010.0030 Added the first version of the Forms page to handle the DA Forms. Added 5 of the buttons and the back button.
  *               It decompresses the PDF and then opens it with the default PDF viewer on the system. When the page closes it
  *               cleans up any forms left in the documents folder (I need to check and make sure it does this part). I had to resize the

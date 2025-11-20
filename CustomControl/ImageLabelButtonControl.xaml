@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwardQuick.CustomControl.ImageLabelButtonControl"
+             x:Name="this">
+    <Grid>
+        <Grid x:Name="backgroundGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image x:Name="image"
+                   Grid.Column="0"
+                   Margin="10,0,0,0"
+                   BackgroundColor="{Binding Source={x:Reference this}, Path=BackgroundColor}"
+                   Source="{Binding Source={x:Reference this}, Path=ImageSource}"
+                   Aspect="{Binding Source={x:Reference this}, Path=ImageAspect}"
+                   WidthRequest="{Binding Source={x:Reference this}, Path=ImageWidth}"
+                   HeightRequest="{Binding Source={x:Reference this}, Path=ImageHeight}" />
+            <Label x:Name="label"
+                   Grid.Column="1"
+                   BackgroundColor="{Binding Source={x:Reference this}, Path=BackgroundColor}"
+                   Text="{Binding Source={x:Reference this}, Path=Text}"
+                   TextColor="{Binding Source={x:Reference this}, Path=TextColor}"
+                   FontSize="{Binding Source={x:Reference this}, Path=TextSize}"
+                   VerticalOptions="Center"
+                   Margin="{Binding Source={x:Reference this}, Path=LabelMargin}" />
+        </Grid>
+        <!-- Transparent overlay button drives interactions and visual states.
+        Bind its IsEnabled so control-level enable/disable propagates. -->
+        <Button x:Name="overlayButton"
+                Grid.ColumnSpan="2"
+                BackgroundColor="Transparent"
+                Command="{Binding Source={x:Reference this}, Path=Command}"
+                CommandParameter="{Binding Source={x:Reference this}, Path=CommandParameter}"
+                IsEnabled="{Binding Source={x:Reference this}, Path=IsEnabled}"
+                Pressed="OnOverlayPressed"
+                Released="OnOverlayReleased"
+                Clicked="OnOverlayClicked" />
+    </Grid>
+</ContentView>
