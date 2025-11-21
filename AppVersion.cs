@@ -26,7 +26,9 @@ namespace AwardQuick
 }
 
 /*
- *  
+ *  v 4.011.0035 Start Writing Tools Page, also fixed RuntimeIdentifiers, ApplicationId and the part in the windows 
+ *               package appxmanifest the added the Your Name to the file paths  mdail 11-21-25
+ *  v 4.011.0034 Start and finished the References page and made it work like the Examples page mdail 11-21-25
  *  v 4.011.0032 Update the version number in the project file mdail 11-20-25
  *  v 4.011.0031 Finished the Letters & Memos page. Added all 4 buttons to open the Word documents and the View Reasons button to 
  *               open the Reasons page with the webview for the html, add the progress overlay to show progress when loading mdail 11/20/25

@@ -59,9 +59,9 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
@@ -73,7 +73,7 @@
                                                   ImageAspect="AspectFit"
                                                   Margin="10,10,10,10"
                                                   LabelMargin="20,0,0,0"
-                                                  HeightRequest="150"
+                                                  HeightRequest="100"
                                                   WidthRequest="450"
                                                   Command="{Binding DAForm638Command}"
                                                   TextSize="14"
@@ -87,15 +87,15 @@
                                                   DisabledTextColor="{DynamicResource Gray900}"
                                                   Text="DA FORM 638 - Recommendation for Award" />
 
-                <controls:ImageLabelButtonControl Grid.Row="0"
-                                                  Grid.Column="1"
+                <controls:ImageLabelButtonControl Grid.Row="1"
+                                                  Grid.Column="0"
                                                   HorizontalOptions="Fill"
                                                   VerticalOptions="Fill"
                                                   Margin="10,10,10,10"
                                                   ImageSource="pdficon.png"
                                                   ImageAspect="AspectFit"
                                                   LabelMargin="10,0,0,0"
-                                                  HeightRequest="150"
+                                                  HeightRequest="100"
                                                   WidthRequest="450"
                                                   Command="{Binding DAForm4187Command}"
                                                   TextSize="14"
@@ -109,7 +109,7 @@
                                                   DisabledTextColor="{DynamicResource Gray900}"
                                                   Text="DA FORM 4187 - Personnel Action" />
 
-                <controls:ImageLabelButtonControl Grid.Row="1"
+                <controls:ImageLabelButtonControl Grid.Row="2"
                                                   Grid.Column="0"
                                                   HorizontalOptions="Fill"
                                                   VerticalOptions="Fill"
@@ -117,7 +117,7 @@
                                                   ImageSource="pdficon.png"
                                                   ImageAspect="AspectFit"
                                                   LabelMargin="10,0,0,0"
-                                                  HeightRequest="150"
+                                                  HeightRequest="100"
                                                   WidthRequest="450"
                                                   Command="{Binding DAForm7594Command}"
                                                   TextSize="14"
@@ -131,14 +131,14 @@
                                                   DisabledTextColor="{DynamicResource Gray900}"
                                                   Text="DA FORM 7594 - Unit Award Recommendation" />
                 <controls:ImageLabelButtonControl Grid.Row="1"
-                                                  Grid.Column="1"
+                                                  Grid.Column="0"
                                                   HorizontalOptions="Fill"
                                                   VerticalOptions="Fill"
                                                   Margin="10,10,10,10"
                                                   ImageSource="pdficon.png"
                                                   ImageAspect="AspectFit"
                                                   LabelMargin="10,0,0,0"
-                                                  HeightRequest="150"
+                                                  HeightRequest="100"
                                                   WidthRequest="450"
                                                   Command="{Binding CitationPageCommand}"
                                                   TextSize="14"
@@ -152,7 +152,7 @@
                                                   DisabledTextColor="{DynamicResource Gray900}"
                                                   Text="CitationPage" />
 
-                <controls:ImageLabelButtonControl Grid.Row="2"
+                <controls:ImageLabelButtonControl Grid.Row="3"
                                                   Grid.Column="0"
                                                   HorizontalOptions="Fill"
                                                   VerticalOptions="Fill"
@@ -160,7 +160,7 @@
                                                   ImageSource="pdficon.png"
                                                   ImageAspect="AspectFit"
                                                   LabelMargin="10,0,0,0"
-                                                  HeightRequest="150"
+                                                  HeightRequest="100"
                                                   WidthRequest="450"
                                                   Command="{Binding NarrativePageCommand}"
                                                   TextSize="14"

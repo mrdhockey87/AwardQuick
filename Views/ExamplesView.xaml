@@ -431,7 +431,7 @@
                                                   DisabledBackgroundColor="{DynamicResource Gray600}"
                                                   DisabledTextColor="{DynamicResource Gray900}" />
 
-                <overlay:ProgressOverlay x:Name="progressOverlay"
+                <overlay:ProgressOverlay x:Name="ExamplesProgressOverlay"
                                          Grid.Row="1"
                                          Grid.Column="0" />
             </Grid>

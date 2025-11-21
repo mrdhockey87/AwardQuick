@@ -6,11 +6,11 @@ namespace AwardQuick.Views;
 public partial class ExamplesView : ContentPage
 {
     private ExamplesViewModel ViewModel => (ExamplesViewModel)BindingContext;
-    public ProgressOverlay ProgressOverlay { get; private set; }
+    public ProgressOverlay? ProgressOverlay { get; private set; }
     public ExamplesView()
 	{
 		InitializeComponent();
-        ProgressOverlay = progressOverlay;
+        ProgressOverlay = ExamplesProgressOverlay;
         ViewModel.SetView(this);
     }
 

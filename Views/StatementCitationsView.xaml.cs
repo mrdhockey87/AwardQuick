@@ -12,21 +12,15 @@ public partial class StatementCitationsView : ContentPage
     {
         // Initialize WebView before InitializeComponent
         _sharedWebView = new WebView();
-
         InitializeComponent();
-
         // Set the WebView in the first container
         WebViewContainer.Content = _sharedWebView;
-
         // Subscribe to HtmlContent changes
         ViewModel.PropertyChanged += ViewModel_PropertyChanged;
-
         // Set initial tab selections
         SetInitialTabSelections();
-
         // Load initial content
         _ = ViewModel.LoadContentAsync();
-
         // Enable saving preferences after initialization
         ViewModel.IsInitializing = false;
     }

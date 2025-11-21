@@ -13,18 +13,29 @@ namespace AwardQuick.Views;
 public partial class PdfFileView : ContentPage
 {
     private bool _isLoading;
-    private PdfFormData? PdfFormData = null;
-    private string PdfPageName = Constants.PdfFileName;
+    private readonly PdfFormData? PdfFormData = null;
+    private readonly string PdfPageName = Constants.PdfFileName;
+
+    private string? _pageTitle { set; get; }
+    public string? PageTitle
+    {
+        get => _pageTitle;
+        set
+        {
+            _pageTitle = value;
+            OnPropertyChanged(nameof(PageTitle));
+        }
+    }
     public PdfFileView()
     {
-        InitializeComponent(); 
-       // _ = LoadPdfFormAsync();
+        InitializeComponent();
+        BindingContext = this;
+        PageTitle = Constants.PdfFileViewTitle;
     }
 
     private async void Page_Loaded(object sender, EventArgs e)
     {
         Debug.WriteLine("Page loaded");
-        //await LoadPdfFormAsync();
     }
 
     protected override async void OnAppearing()

@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:AwardQuick.ViewModels"
              xmlns:overlay="clr-namespace:AwardQuick.Overlays"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Toolkit.TabView;assembly=Syncfusion.Maui.Toolkit"
              x:Class="AwardQuick.Views.WritingToolsView"
              Title="Writing Tools">
     <ContentPage.BindingContext>
         <viewModels:WritingToolsViewModel x:Name="WritingToolsViewModel" />
     </ContentPage.BindingContext>
-
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -19,9 +19,67 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+            <!-- Header -->
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   TextColor="{DynamicResource PrimaryText}"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   Margin="10"
+                   HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Start"
+                   VerticalOptions="Center"
+                   Text="Writting Tools" />
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Clicked="OnBackClicked"
+                    Text="🠼 Back"
+                    FontSize="20"
+                    TextColor="{DynamicResource PrimaryText}"
+                    ContentLayout="Left,5" />
+
+            <!-- Main Tab View with 7 tabs -->
+            <syncfusion:SfTabView Grid.Row="1"
+                                  Grid.Column="0"
+                                  Grid.ColumnSpan="2"
+                                  x:Name="MainTabView"
+                                  TabBarBackground="{StaticResource PrimaryText}"
+                                  IndicatorPlacement="Fill"
+                                  IndicatorBackground="{StaticResource HomePageText}"
+                                  SelectionChanged="OnMainTabSelectionChanged">
+                <syncfusion:SfTabItem Header="Guidelines"
+                                      TextColor="{StaticResource PrimaryBackground}">
+                    <ContentView  x:Name="WebViewContainer"/>
+                </syncfusion:SfTabItem>
+                <syncfusion:SfTabItem Header="Word Combos"
+                                      TextColor="{StaticResource PrimaryBackground}">
+                    <ContentView />
+                </syncfusion:SfTabItem>
+                <syncfusion:SfTabItem Header="Citation Generator"
+                                      TextColor="{StaticResource PrimaryBackground}">
+                    <ContentView />
+                </syncfusion:SfTabItem>
+                <syncfusion:SfTabItem Header="Phrases"
+                                      TextColor="{StaticResource PrimaryBackground}">
+                    <ContentView />
+                </syncfusion:SfTabItem>
+                <syncfusion:SfTabItem Header="Adjectives"
+                                      TextColor="{StaticResource PrimaryBackground}">
+                    <ContentView />
+                </syncfusion:SfTabItem>
+                <syncfusion:SfTabItem Header="Nouns"
+                                      TextColor="{StaticResource PrimaryBackground}">
+                    <ContentView />
+                </syncfusion:SfTabItem>
+                <syncfusion:SfTabItem Header="Verbs"
+                                      TextColor="{StaticResource PrimaryBackground}">
+                    <ContentView />
+                </syncfusion:SfTabItem>
+            </syncfusion:SfTabView>
             <overlay:ProgressOverlay x:Name="progressOverlay"
                                      Grid.Row="1"
-                                     Grid.Column="0" />
+                                     Grid.Column="0"
+                                     Grid.ColumnSpan="2" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

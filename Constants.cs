@@ -9,5 +9,6 @@ namespace AwardQuick
     public static class Constants
     {
         public static string PdfFileName = "";
+        public static string PdfFileViewTitle = "Examples";
     }
 }

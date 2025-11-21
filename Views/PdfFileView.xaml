@@ -33,13 +33,14 @@
         <!-- Header: Label on the left, Back button on the right -->
         <Label Grid.Row="0"
                Grid.Column="0"
+               x:Name="HeaderLabel"
                HorizontalOptions="Start"
                VerticalOptions="Center"
                HorizontalTextAlignment="Start"
                Margin="18,10,0,10"
                FontSize="22"
                TextColor="{DynamicResource PrimaryText}"
-               Text="Examples" />
+               Text="{Binding PageTitle}" />
 
         <Button Grid.Row="0"
                 Grid.Column="1"

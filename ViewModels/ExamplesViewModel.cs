@@ -14,25 +14,26 @@ namespace AwardQuick.ViewModels
     public partial class ExamplesViewModel : ObservableObject
     {
         private readonly IPdfService _pdfService;
+        private static ExamplesView? ExView;
+        public void SetView(ExamplesView exview) => ExView = exview;
+        public ExamplesViewModel() : this(ServiceHelper.GetService<IPdfService>()) { }
         public IAsyncRelayCommand DAForm638Command { get; }
         public IAsyncRelayCommand DAForm7594Command { get; }
         public IAsyncRelayCommand LegonOfMeritCommand { get; }
         public IAsyncRelayCommand MedalOfHonorCommand { get; }
-        public ICommand OperationOfficerCommand { get; }
-        public ICommand FirstSergeantCommand { get; }
-        public ICommand ExecutiveOfficerCommand { get; }
-        public ICommand PLTSergeantCommand { get; }
-        public ICommand CCVersion1Command { get; }
-        public ICommand S1NCOICCommand { get; }
-        public ICommand CCVersion2Command { get; }
-        public ICommand S4NCOICCommand { get; }
-        public ICommand CCVersion3Command { get; }
-        public ICommand S3OpsSGMCommand { get; }
-        public ICommand CCVersion4Command { get; }
-        public ICommand CSMCommand { get; }
-        private static ExamplesView? ExView;
-        public void SetView(ExamplesView exview) => ExView = exview;        
-        public ExamplesViewModel() : this(ServiceHelper.GetService<IPdfService>()) { }
+        public IAsyncRelayCommand OperationOfficerCommand { get; }
+        public IAsyncRelayCommand FirstSergeantCommand { get; }
+        public IAsyncRelayCommand ExecutiveOfficerCommand { get; }
+        public IAsyncRelayCommand PLTSergeantCommand { get; }
+        public IAsyncRelayCommand CCVersion1Command { get; }
+        public IAsyncRelayCommand S1NCOICCommand { get; }
+        public IAsyncRelayCommand CCVersion2Command { get; }
+        public IAsyncRelayCommand S4NCOICCommand { get; }
+        public IAsyncRelayCommand CCVersion3Command { get; }
+        public IAsyncRelayCommand S3OpsSGMCommand { get; }
+        public IAsyncRelayCommand CCVersion4Command { get; }
+        public IAsyncRelayCommand CSMCommand { get; }
+
         public ExamplesViewModel(IPdfService pdfService)
         {
             DAForm638Command = new AsyncRelayCommand(DAForm638CommandExecute);
@@ -77,7 +78,7 @@ namespace AwardQuick.ViewModels
         {
             try
             {
-                if (ExView != null)
+                if (ExView?.ProgressOverlay != null)
                 {
                     await ExView.ProgressOverlay.ShowAsync();
                 }
@@ -87,7 +88,7 @@ namespace AwardQuick.ViewModels
                 //var localPdfPath = await _pdfService.MaterializePdfFromAssetsAsync(packagedPath);
                 if (string.IsNullOrWhiteSpace(packagedPath) || !File.Exists(packagedPath))
                 {
-                    if (ExView != null)
+                    if (ExView?.ProgressOverlay != null)
                     {
                         await ExView.ProgressOverlay.Hide();
                         await ExView.DisplayAlertAsync("Unable to resolve PDF path.", "Path is null or file missing.", "OK");
@@ -96,8 +97,9 @@ namespace AwardQuick.ViewModels
                 }
 
                 Constants.PdfFileName = packagedPath;
+                Constants.PdfFileViewTitle = "Examples";
                 await MainThread.InvokeOnMainThreadAsync(async () => await Shell.Current.GoToAsync("PdfViewer"));
-                if (ExView != null)
+                if (ExView?.ProgressOverlay != null)
                 {
                     await ExView.ProgressOverlay.Hide();
                 }
@@ -105,7 +107,7 @@ namespace AwardQuick.ViewModels
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Navigation failed: {ex}");
-                if (ExView != null)
+                if (ExView?.ProgressOverlay != null)
                 {
                     await ExView.ProgressOverlay.Hide();
                     await ExView.DisplayAlertAsync("Navigation failed", ex.Message, "OK");

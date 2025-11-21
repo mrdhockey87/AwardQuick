@@ -43,12 +43,12 @@
                     HorizontalOptions="End"
                     TextColor="{DynamicResource PrimaryText}"
                     ContentLayout="Left,5" />
-            <!-- Forms List -->
+            <!-- Letters & Memos List -->
             <Grid Grid.Row="1"
                   Grid.Column="0"
                   Grid.ColumnSpan="2"
                   Margin="0,20,0,20"
-                  HorizontalOptions="Center"
+                  HorizontalOptions="Fill"
                   VerticalOptions="Fill">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -155,9 +155,10 @@
                         HorizontalOptions="Fill"
                         VerticalOptions="End"
                         FontSize="18"
+                        Padding="0,0,30,0"
                         TextColor="{DynamicResource HomePageText}"
                         Style="{StaticResource VersionButtonStyle}"
-                        Text="*View Reasons for Letters of Lateness" />
+                        Text="*View Reasons for Letters of Lateness!" />
 
 
                 <overlay:ProgressOverlay x:Name="progressOverlay"
