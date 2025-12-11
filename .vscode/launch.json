@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [        
+            {
+                "name": ".NET MAUI: Debug iOS",
+                "type": "maui",
+                "request": "launch",
+                "preLaunchTask": "build"
+                /*,
+                "program": "${workspaceFolder}/bin/Debug/net10.0-ios/ios-arm64/AwardQuick.dll", // Adjust path and framework as needed
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                },
+                "target": "ios-simulator", // or "ios-device"
+                "deviceId": "" */// Optional: specify UDID for a physical device
+            },
+            {
+                "name": ".NET MAUI: Debug Android",
+                "type": "maui",
+                "request": "launch",
+                "preLaunchTask": "build"
+                /*,
+                "program": "${workspaceFolder}/bin/Debug/net10.0-android/AwardQuick.dll", // Adjust path and framework as needed
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                },
+                "target": "android-emulator", // or "android-device"
+                "deviceId": "" */// Optional: specify device ID for a physical device
+            },
+            {
+                "name": ".NET MAUI: Debug macOS",
+                "type": "maui",
+                "request": "launch",
+                "preLaunchTask": "build"
+                /*,
+                "program": "${workspaceFolder}/bin/Debug/net10.0-maccatalyst/AwardQuick.dll", // Adjust path and framework as needed
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "ASPNETCORE_ENVIRONMENT": "Development"
+                },
+                "target": "maccatalyst"*/
+            }
+        ]
+}

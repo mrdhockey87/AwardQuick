@@ -22,7 +22,7 @@
 	   <ApplicationId>com.mentormilitary.awardquick</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>4.011.0035</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>4.011.0036</ApplicationDisplayVersion>
 		<ApplicationVersion>4</ApplicationVersion>
 
 		<!-- To develop, package, and publish an app to the Microsoft Store, see: https://aka.ms/MauiTemplateUnpackaged -->

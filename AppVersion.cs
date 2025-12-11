@@ -26,6 +26,7 @@ namespace AwardQuick
 }
 
 /*
+ *  v 4.011.0036 Fixed the issue with the PDF  print have tow var's that needed null checks. mdail 12-4-25
  *  v 4.011.0035 Start Writing Tools Page, also fixed RuntimeIdentifiers, ApplicationId and the part in the windows 
  *               package appxmanifest the added the Your Name to the file paths  mdail 11-21-25
  *  v 4.011.0034 Start and finished the References page and made it work like the Examples page mdail 11-21-25
